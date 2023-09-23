@@ -68,20 +68,28 @@ export default function App() {
             </NavLink>
             {/* <nav className="space-x-8"> */}
             <NavigationMenu className="font-medium text-sm">
-              <NavigationMenuList className="flex flex-row space-x-5">
+              <NavigationMenuList className="flex flex-row space-x-2 md:space-x-4">
                 <NavigationMenuItem>
                   <NavigationMenuTrigger className="bg-transparent font-semibold hover:text-zinc-50 hover:bg-transparent data-[state=open]:bg-transparent">
-                    <NavLink to="/">About</NavLink>
+                    <NavLink to="/bio">About</NavLink>
                   </NavigationMenuTrigger>
                   <NavigationMenuContent className="text-zinc-50">
-                    <ul className="px-8 py-0.5 flex flex-col space-y-1">
+                    <ul className="w-48 pl-4 py-0.5 flex flex-col space-y-1">
                       <NavLink to="/bio">Bio</NavLink>
                       <NavLink to="https://read.cv/koobawuah">CV</NavLink>
                     </ul>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                  <NavLink to="/projects">Creative Space</NavLink>
+                  <NavigationMenuTrigger className="bg-transparent font-semibold hover:text-zinc-50 hover:bg-transparent data-[state=open]:bg-transparent">
+                    <NavLink to="/projects">Creative Space</NavLink>
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent className="text-zinc-50">
+                    <ul className="w-72 ml-20 pl-7 py-0.5 flex flex-col place-self-center space-y-1">
+                      <NavLink to="/projects">My Portfolio</NavLink>
+                      <NavLink to="/">Sandbox</NavLink>
+                    </ul>
+                  </NavigationMenuContent>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
                   <NavLink to="/reach-me">Reach me</NavLink>
