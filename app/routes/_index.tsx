@@ -23,9 +23,9 @@ export default function Index() {
         <div className="">
           <Link
             to="https://cal.com/bawuahboakye"
-            className="px-4 py-2 bg-transparent border border-zinc-50 rounded-full text-sm font-medium uppercase active:bg-zinc-50 active:text-zinc-900"
+            className="px-4 py-3 bg-transparent border border-zinc-50 rounded-full text-sm font-medium active:bg-zinc-50 active:text-zinc-900 after:content-['_↗']"
           >
-            Schedule a free Consultation
+            Start A Free Consultation Call
           </Link>
         </div>
       </header>
@@ -112,14 +112,73 @@ export default function Index() {
         </div>
       </section> */}
 
-      <footer className="w-full my-8 flex flex-col">
-        <div className="flex flex-row justify-between">
+      <section className="w-full h-96 px-8 bg-red-400">
+        <h1>Project process</h1>
+      </section>
+
+      <footer className="w-full max-h-max py-8 px-8 flex flex-col relative">
+        <div className="w-full my-8 flex flex-col space-y-2 text-center md:justify-start md:text-left">
+          <h2 className="text-3xl font-semibold">
+            Are Ready to Elevate Your Project or Business?
+          </h2>
+          <p className="text-base font-normal">
+            I'm ready to bring your ideas and visions to life with the highest
+            quality of service!
+          </p>
+          <div className="py-4 place-self-center md:place-self-start">
+            <Link
+              to="https://cal.com/bawuahboakye"
+              className="max-w-max flex items-center px-4 py-3 bg-transparent border border-zinc-50 rounded-full text-sm font-medium active:bg-zinc-50 active:text-zinc-900 after:content-['🗓'️]"
+            >
+              Schedule a Discovery Call
+              <span className="">
+                <svg
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  className="w-4 h-4 ml-3"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5"
+                  />
+                </svg>
+              </span>
+            </Link>
+          </div>
+        </div>
+        <div className="flex flex-col space-y-4 d:flex-row md:justify-between">
           <div>
-            <p>
-              bawuahboakye &copy; {Date().toString()}. Designed by Bawuahboakye
+            <p className="text-sm text-center">
+              bawuahboakye &copy;{" "}
+              {Intl.DateTimeFormat("en-GH", { year: "numeric" }).format(
+                Date.now()
+              )}
+              . Designed by bawuahboakye
             </p>
           </div>
-          <div></div>
+          <div className="flex flex-row justify-center space-x-3">
+            <i>
+              <a href="https://instagram.com/koobawuah" target="_blank">
+                Instagram
+              </a>
+            </i>
+            <i>
+              <a href="https://twitter.com/koobawuah" target="_blank">
+                Twitter | X
+              </a>
+            </i>
+            <i>
+              <a href="https://linkedin.com/koobawuah" target="_blank">
+                LinkedIn
+              </a>
+            </i>
+            <i>
+              <a href="mailto:me@bawuahboakye.com">mail</a>
+            </i>
+          </div>
         </div>
       </footer>
     </div>
