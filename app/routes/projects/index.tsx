@@ -109,7 +109,7 @@ export const ProjectCard: React.FC<PortfolioData> = ({
   return (
     <div
       className={cn(
-        "py-10 px-6 my-4 max-w-5xl mx-auto flex flex-col bg-red-500 rounded-3xl md:px-8 md:py-12 md:my-10",
+        "py-10 px-6 my-4 max-w-5xl mx-auto flex flex-col bg-zinc-800 rounded-3xl md:px-8 md:py-12 md:my-10",
         className
       )}
     >
