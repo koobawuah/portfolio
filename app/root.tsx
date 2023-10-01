@@ -46,7 +46,8 @@ export default function App() {
                 <Tooltip>
                   <TooltipTrigger>
                     <img
-                      src="https://drive.google.com/uc?export=view&id=1Ox2YHpHKRWcAxgQn3RiE9BUygLsChBl1"
+                      // src="https://drive.google.com/uc?export=view&id=1Ox2YHpHKRWcAxgQn3RiE9BUygLsChBl1"
+                      src="/profile_picture.jpg"
                       className="w-10 h-10 rounded-full overflow-hidden object-cover"
                     />
                     <div className="h-4 w-4 absolute bottom-0 -right-1 bg-emerald-400 rounded-full border-4 border-zinc-950"></div>
