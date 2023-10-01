@@ -29,18 +29,22 @@ export default function Index() {
           </Link>
         </div>
       </header>
-      <main className="my-0 py-8 px-4 w-full md:my-16 sticky">
+      <main className="py-8 px-4 w-full md:my-20">
         {Array.from([1, 2, 3, 4, 5, 6]).map((i, index) => (
-          <ProjectCard
+          <div
             key={index}
-            className="sticky top-20"
-            title="Hello world"
-            description="Some works of Hello world on display Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"
-            images={[
-              "https://via.placeholder.com/600/24f355",
-              "https://via.placeholder.com/600/24f355",
-            ]}
-          />
+            className="sticky transform"
+            style={{ top: `${(index + 1) * 50}px` }}
+          >
+            <ProjectCard
+              title="Hello world"
+              description="Some works of Hello world on display Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"
+              images={[
+                "https://via.placeholder.com/600/24f355",
+                "https://via.placeholder.com/600/24f355",
+              ]}
+            />
+          </div>
         ))}
       </main>
 
@@ -112,8 +116,13 @@ export default function Index() {
         </div>
       </section> */}
 
-      <section className="w-full h-96 px-8 bg-red-400">
+      <section className="w-full h-96 px-8">
         <h1>Project process</h1>
+        <p>
+          From exploration to execution, this dynamic framework fuels creativity
+          and precision, ensuring your product journey aligns seamlessly with
+          user desires.
+        </p>
       </section>
 
       <footer className="w-full max-h-max py-8 px-8 flex flex-col relative">
@@ -135,13 +144,13 @@ export default function Index() {
                 <svg
                   fill="none"
                   viewBox="0 0 24 24"
-                  stroke-width="1.5"
+                  strokeWidth="1.5"
                   stroke="currentColor"
                   className="w-4 h-4 ml-3"
                 >
                   <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                     d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5"
                   />
                 </svg>
@@ -152,11 +161,9 @@ export default function Index() {
         <div className="flex flex-col space-y-4 d:flex-row md:justify-between">
           <div>
             <p className="text-sm text-center">
-              bawuahboakye &copy;{" "}
-              {Intl.DateTimeFormat("en-GH", { year: "numeric" }).format(
-                Date.now()
-              )}
-              . Designed by bawuahboakye
+              {`bawuahboakye © ${Intl.DateTimeFormat("en-GH", {
+                year: "numeric",
+              }).format(Date.now())}. Designed by bawuahboakye`}
             </p>
           </div>
           <div className="flex flex-row justify-center space-x-3">
