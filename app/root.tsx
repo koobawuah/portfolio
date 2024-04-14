@@ -1,18 +1,18 @@
-import { cssBundleHref } from "@remix-run/css-bundle";
 import stylesheet from "~/tailwind.css";
 import type { LinksFunction } from "@remix-run/node";
 import {
   Links,
   LiveReload,
   Meta,
+  NavLink,
   Outlet,
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
+import React from "react";
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: stylesheet },
-  ...(cssBundleHref ? [{ rel: "stylesheet", href: cssBundleHref }] : []),
 ];
 
 export default function App() {
@@ -25,8 +25,10 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body className="w-full mx-auto bg-zinc-950 text-zinc-100 dark:bg-black dark:text-slate-50">
-        <Outlet />
+      <body className="w-full mx-auto">
+        <div className="">
+          <Outlet />
+        </div>
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
