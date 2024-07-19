@@ -26,8 +26,10 @@ export default function Index() {
     { text: "Working" },
     { text: "on" },
     { text: "1" },
-    { text: "web app," },
-    { text: "2 websites," },
+    { text: "web" },
+    { text: "app," },
+    { text: "2" },
+    { text: "websites," },
     { text: "1 brand" },
     { text: "identity" },
     { text: "design," },
@@ -58,7 +60,7 @@ export default function Index() {
             2 startups & setting up farmlands.
           </h1> */}
           <TypewriterEffect
-            className="max-w-3xl text-3xl md:text-6xl font-black text-balance"
+            className="max-w-3xl text-3xl md:text-6xl font-black text-balance text-left"
             words={words}
           />
         </motion.div>
