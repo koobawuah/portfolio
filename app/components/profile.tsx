@@ -10,9 +10,9 @@ export default function Profile() {
       transition={{ delay: 0.4, duration: 0.8 }}
       className="max-w-max space-y-5 mx-auto flex flex-col justify-center items-start"
     >
-      <div className="mx-auto py-5">
+      <div className="mx-auto py-5 greyscale contrast-125 ">
         <img
-          className="w-[439px] object-cover greyscale contrast-125 rounded-2xl"
+          className="w-[439px] object-cover rounded-2xl"
           src="/profile_picture.JPG"
         />
       </div>
