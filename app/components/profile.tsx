@@ -12,7 +12,7 @@ export default function Profile() {
     >
       <div className="mx-auto py-5">
         <img
-          className="w-[439px] object-cover rounded-2xl"
+          className="w-[439px] object-cover greyscale contrast-125 rounded-2xl"
           src="/profile_picture.JPG"
         />
       </div>
