@@ -60,8 +60,8 @@ export default function Index() {
             What I am doing now:
           </h3>
           <TypewriterEffect
-            className="max-w-5xl text-3xl md:text-6xl font-black text-balance text-left self-start"
-            cursorClassName="h-6 bg-zinc-950 dark:bg-zinc-100"
+            className="max-w-5xl text-3xl md:text-6xl font-black text-balance text-left self-start dark:text-zinc-200"
+            cursorClassName="h-6 bg-zinc-950 dark:bg-zinc-200"
             words={words}
           />
         </motion.div>
@@ -75,7 +75,7 @@ export default function Index() {
           }}
           className="pb-10 flex flex-row justify-center"
         >
-          <h1 className="max-w-5xl text-4xl md:text-9xl font-black text-pretty">
+          <h1 className="max-w-5xl text-4xl md:text-9xl font-black text-pretty dark:text-zinc-200">
             In the mean time, learn more about me...
           </h1>
         </motion.div>
