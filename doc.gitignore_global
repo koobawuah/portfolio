@@ -77,3 +77,10 @@ Social Links
                   <FaLinkedin className="" /> LinkedIn
                 </Link>
               </li>
+
+
+
+          {/* <h1 className="max-w-3xl text-3xl md:text-6xl font-black text-balance">
+            Working on 1 web app, 2 websites, 1 brand identity design, building
+            2 startups & setting up farmlands.
+          </h1> */}

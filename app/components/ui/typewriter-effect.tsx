@@ -1,5 +1,3 @@
-"use client";
-
 import { motion, stagger, useAnimate, useInView } from "framer-motion";
 import { useEffect } from "react";
 import { cn } from "~/lib/utils";
@@ -36,8 +34,8 @@ export const TypewriterEffect = ({
           width: "fit-content",
         },
         {
-          duration: 0.3,
-          delay: stagger(0.1),
+          duration: 0.2,
+          delay: stagger(0.2, { startDelay: 2 }),
           ease: "easeInOut",
         }
       );
@@ -60,15 +58,18 @@ export const TypewriterEffect = ({
                   )}
                 >
                   {char}
+                  {index >= word.text.length - 1 ? (
+                    <span className="inline">&nbsp;</span>
+                  ) : null}
                 </motion.span>
               ))}
-              &nbsp;
             </div>
           );
         })}
       </motion.div>
     );
   };
+
   return (
     <div
       className={cn(
