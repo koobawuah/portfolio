@@ -34,8 +34,8 @@ export const TypewriterEffect = ({
           width: "fit-content",
         },
         {
-          duration: 0.2,
-          delay: stagger(0.2, { startDelay: 2 }),
+          duration: 0.01,
+          delay: stagger(0.08, { startDelay: 1.8 }),
           ease: "easeInOut",
         }
       );
@@ -58,8 +58,9 @@ export const TypewriterEffect = ({
                   )}
                 >
                   {char}
-                  {index >= word.text.length - 1 ? (
-                    <span className="inline">&nbsp;</span>
+                  {index === word.text.length - 1 &&
+                  idx !== wordsArray.length - 1 ? (
+                    <>&nbsp;</>
                   ) : null}
                 </motion.span>
               ))}
