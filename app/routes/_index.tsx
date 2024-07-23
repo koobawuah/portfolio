@@ -51,7 +51,7 @@ export default function Index() {
       {/* <h1>bawuahboakye</h1> */}
       <CtaAction
         title="FREE 15 MINS CALL"
-        ctaLink="https://cal.com/bawuahboakye/15-mins-free-consultation"
+        ctaLink="https://cal.com/bawuahboakye/free-15-mins"
       />
       <Header />
       <section className="w-full max-h-min px-5 py-10">
