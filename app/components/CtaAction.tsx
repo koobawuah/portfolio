@@ -14,7 +14,7 @@ export const CtaAction = ({
   return (
     <>
       <button
-        onClick={() => location.replace(ctaLink)}
+        onClick={() => window.open(ctaLink, "_blank")}
         className={cn(
           "fixed top-4 right-6 z-[1000] inline-flex h-12 overflow-hidden rounded-full p-[1.5px] focus:outline-none focus:ring-4 focus:ring-slate-400 focus:ring-offset-4 focus:ring-offset-zinc-50",
           buttonClassName
