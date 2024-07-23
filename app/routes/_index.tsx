@@ -1,5 +1,6 @@
 import type { MetaFunction } from "@remix-run/node";
 import { motion } from "framer-motion";
+import { CtaAction } from "~/components/CtaAction";
 import Footer from "~/components/footer";
 import Header from "~/components/header";
 // import MultiPartProfile from "~/components/multipart-profile";
@@ -46,12 +47,16 @@ export default function Index() {
     { text: "farmlands..." },
   ];
   return (
-    <>
+    <div className="relative">
       {/* <h1>bawuahboakye</h1> */}
+      <CtaAction
+        title="FREE 15 MINS CALL"
+        ctaLink="https://cal.com/bawuahboakye/15-mins-free-consultation"
+      />
       <Header />
       <section className="w-full max-h-min px-5 py-10">
         <motion.div
-          initial={{ opacity: 0.15 }}
+          initial={{ opacity: 0.05 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.4 }}
           className="max-w-5xl h-56 mt-20 mb-48 mx-auto flex flex-col items-center"
@@ -67,7 +72,7 @@ export default function Index() {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0.15 }}
+          initial={{ opacity: 0.05 }}
           whileInView={{ opacity: 1 }}
           transition={{
             duration: 0.8,
@@ -86,6 +91,6 @@ export default function Index() {
       <section className="px-5">
         <Footer />
       </section>
-    </>
+    </div>
   );
 }
