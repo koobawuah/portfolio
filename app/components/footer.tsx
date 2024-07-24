@@ -2,7 +2,7 @@ import { Link } from "@remix-run/react";
 
 export default function Footer() {
   return (
-    <div className="h-80 flex flex-col justify-between">
+    <div className="h-80 px-4 flex flex-col justify-between">
       <div className="w-full text-5xl leading-loose flex justify-center md:text-9xl ">
         <h2 className="">Bawuah Boakye</h2>
       </div>

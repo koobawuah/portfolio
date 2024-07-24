@@ -1,4 +1,5 @@
 import type { MetaFunction } from "@remix-run/node";
+import { Link } from "@remix-run/react";
 import { motion } from "framer-motion";
 import { CtaAction } from "~/components/CtaAction";
 import Footer from "~/components/footer";
@@ -6,6 +7,7 @@ import Header from "~/components/header";
 import HeroHeading from "~/components/hero-heading";
 // import MultiPartProfile from "~/components/multipart-profile";
 import Profile from "~/components/profile";
+import ProjectListItem from "~/components/project-list-item";
 import RevealAnimation from "~/components/reveal-animation";
 import SubHeading from "~/components/sub-heading";
 // import ProjectPreview from "~/components/project-preview";
@@ -50,7 +52,7 @@ export default function Index() {
     { text: "farmlands..." },
   ];
   return (
-    <div className="relative">
+    <div className="h-full relative">
       {/* <h1>bawuahboakye</h1> */}
       <CtaAction
         title="FREE 15 MINS CALL"
@@ -73,9 +75,65 @@ export default function Index() {
 
         {/* <MultiPartProfile /> */}
       </section>
-      <section className="px-5">
-        <Footer />
+      <section className="w-full max-h-80 my-10">
+        <ul className="h-full flex space-x-6 my-10">
+          {/* {projects &&
+            projects.map((p, idx) => (
+              <ProjectListItem
+                key={idx}
+                title={p.title}
+                projectLink={p.projectLink}
+                themeColor={p.themeColor}
+                previewImage={p.previewImage}
+              />
+            ))} */}
+        </ul>
       </section>
+      <Footer />
     </div>
   );
 }
+
+const projects = [
+  {
+    title: "E-commerce Web Development",
+    subtitle: "",
+    projectLink: "https://behance.net/bawuahboakye/ttetl",
+    themeColor: "bg-[#f3ca4d]",
+    previewImage: "/ttetl-brochure-front.jpg",
+    previewImageStyle: "",
+  },
+  {
+    title: "E-commerce Web Development",
+    titleStyle: "text-zinc-200",
+    subtitle: "",
+    projectLink: "https://behance.net/bawuahboakye/ttetl",
+    themeColor: "bg-[#14171f]",
+    previewImage: "/ttetl-brochure-front.jpg",
+    previewImageStyle: "",
+  },
+  {
+    title: "E-commerce Web Development",
+    subtitle: "",
+    projectLink: "https://behance.net/bawuahboakye/ttetl",
+    themeColor: "bg-[#ffff99]",
+    previewImage: "/ttetl-brochure-front.jpg",
+    previewImageStyle: "",
+  },
+  {
+    title: "E-commerce Web Development",
+    subtitle: "",
+    projectLink: "https://behance.net/bawuahboakye/ttetl",
+    themeColor: "bg-[#d0d4dc]",
+    previewImage: "/ttetl-brochure-front.jpg",
+    previewImageStyle: "",
+  },
+  {
+    title: "E-commerce Web Development",
+    subtitle: "",
+    projectLink: "https://behance.net/bawuahboakye/ttetl",
+    themeColor: "bg-[#ff00ff]",
+    previewImage: "/ttetl-brochure-front.jpg",
+    previewImageStyle: "",
+  },
+];

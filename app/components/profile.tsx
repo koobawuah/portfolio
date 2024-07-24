@@ -1,6 +1,12 @@
 import { Link } from "@remix-run/react";
 import { motion } from "framer-motion";
-import { FaGithub, FaInstagram, FaLinkedin, FaXTwitter } from "react-icons/fa6";
+import {
+  FaBehance,
+  FaGithub,
+  FaInstagram,
+  FaLinkedin,
+  FaXTwitter,
+} from "react-icons/fa6";
 import { ExpandableCard } from "./ui/expandable-card";
 
 export default function Profile() {
@@ -35,7 +41,7 @@ export default function Profile() {
             ctaText="Let's chat now"
             content={() => (
               <>
-                <p className="text-lg mt-3 font-semibold text-zinc-500 dark:text-zinc-400 ">
+                <p className="text-lg mt-3 font-extralight text-zinc-950 dark:text-zinc-200 ">
                   Growing up in Accra, Ghana, life as I experienced, was
                   enjoyable and adventurous, filled with traveling and fun times
                   with my family. I always had a knack for drawing cool stuff.
@@ -84,7 +90,7 @@ export default function Profile() {
         </p>
       </div>
       <div className="">
-        <h2 className="w-auto font-semibold text-sm py-2 text-zinc-500">
+        <h2 className="w-auto font-semibold text-sm py-2.5 text-zinc-500">
           Socials:
         </h2>
         <ul className="w-full flex flex-row flex-wrap overflow-hidden space-x-4 justify-evenly items-center">
@@ -94,7 +100,7 @@ export default function Profile() {
               to="http://instagram.com/koobawuah"
               className="flex items-center"
             >
-              <FaInstagram className="h-10 w-10 mr-2 text-zinc-500 hover:text-zinc-950 dark:text-zinc-500 dark:hover:text-zinc-200 transition" />{" "}
+              <FaInstagram className="size-8 mr-2 text-zinc-500 hover:text-zinc-950 dark:text-zinc-500 dark:hover:text-zinc-200 transition" />{" "}
               <p className="hidden">Instagram</p>
             </Link>
           </li>
@@ -103,7 +109,7 @@ export default function Profile() {
               to="http://twitter.com/koobawuah"
               className="flex items-center"
             >
-              <FaXTwitter className="h-10 w-10 mr-2 text-zinc-500 hover:text-zinc-950 dark:text-zinc-500 dark:hover:text-zinc-200 transition" />{" "}
+              <FaXTwitter className="size-8 mr-2 text-zinc-500 hover:text-zinc-950 dark:text-zinc-500 dark:hover:text-zinc-200 transition" />{" "}
               <p className="hidden">X(Twitter)</p>
             </Link>
           </li>
@@ -112,7 +118,7 @@ export default function Profile() {
               to="http://github.com/koobawuah"
               className="flex items-center"
             >
-              <FaGithub className="h-10 w-10 mr-2 text-zinc-500 hover:text-zinc-950 dark:text-zinc-500 dark:hover:text-zinc-200 transition" />{" "}
+              <FaGithub className="size-8 mr-2 text-zinc-500 hover:text-zinc-950 dark:text-zinc-500 dark:hover:text-zinc-200 transition" />{" "}
               <p className="hidden">Github</p>
             </Link>
           </li>
@@ -121,8 +127,17 @@ export default function Profile() {
               to="http://linkedin.com/in/bawuah-boakye-9b4362144"
               className="flex items-center"
             >
-              <FaLinkedin className="h-10 w-10 mr-2 text-zinc-500 hover:text-zinc-950 dark:text-zinc-500 dark:hover:text-zinc-200 transition" />{" "}
+              <FaLinkedin className="size-8 mr-2 text-zinc-500 hover:text-zinc-950 dark:text-zinc-500 dark:hover:text-zinc-200 transition" />{" "}
               <p className="hidden">LinkedIn</p>
+            </Link>
+          </li>
+          <li className="list-none">
+            <Link
+              to="http://behance.net/bawuahboakye"
+              className="flex items-center"
+            >
+              <FaBehance className="size-8 mr-2 text-zinc-500 hover:text-zinc-950 dark:text-zinc-500 dark:hover:text-zinc-200 transition" />{" "}
+              <p className="hidden">Behance</p>
             </Link>
           </li>
         </ul>
