@@ -28,7 +28,7 @@ export const CtaAction = ({
           )}
         >
           {title}
-          <SparkIcon className="ml-2 size-4 fill-zinc-950" />
+          <SparkIcon className="ml-2 size-4 fill-zinc-800" />
         </span>
       </button>
       {/* <motion.div className="fixed top-4 right-6 z-50">{title}</motion.div>) */}
