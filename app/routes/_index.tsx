@@ -3,8 +3,11 @@ import { motion } from "framer-motion";
 import { CtaAction } from "~/components/CtaAction";
 import Footer from "~/components/footer";
 import Header from "~/components/header";
+import HeroHeading from "~/components/hero-heading";
 // import MultiPartProfile from "~/components/multipart-profile";
 import Profile from "~/components/profile";
+import RevealAnimation from "~/components/reveal-animation";
+import SubHeading from "~/components/sub-heading";
 // import ProjectPreview from "~/components/project-preview";
 import {
   TypewriterEffect,
@@ -55,37 +58,19 @@ export default function Index() {
       />
       <Header />
       <section className="w-full max-h-min px-5 py-10">
-        <motion.div
-          initial={{ opacity: 0.05 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="max-w-5xl h-56 mt-20 mb-48 mx-auto flex flex-col items-center"
-        >
-          <h3 className="w-auto font-semibold text-md py-2 text-zinc-500 self-start">
-            What I am doing now:
-          </h3>
+        <RevealAnimation>
+          <SubHeading title="What I am doing now:" />
           <TypewriterEffect
             className="max-w-5xl text-3xl md:text-6xl font-black text-pretty text-left self-start"
             cursorClassName="h-6 bg-zinc-950 dark:bg-zinc-100"
             words={words}
           />
-        </motion.div>
+        </RevealAnimation>
 
-        <motion.div
-          initial={{ opacity: 0.05 }}
-          whileInView={{ opacity: 1 }}
-          transition={{
-            duration: 0.8,
-            delay: 0.4,
-          }}
-          className="pb-10 flex flex-row justify-center"
-        >
-          <h1 className="max-w-5xl text-4xl md:text-9xl font-black text-pretty text-zinc-950 dark:text-zinc-200">
-            In the mean time, learn more about me...
-          </h1>
-        </motion.div>
+        <HeroHeading title="In the mean time, learn more about me..." />
 
         <Profile />
+
         {/* <MultiPartProfile /> */}
       </section>
       <section className="px-5">
