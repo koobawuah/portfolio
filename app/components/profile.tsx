@@ -98,6 +98,7 @@ export default function Profile() {
             {/* <SocialLink icon link label/> */}
             <Link
               to="http://instagram.com/koobawuah"
+              target="_blank"
               className="flex items-center"
             >
               <FaInstagram className="size-8 mr-2 text-zinc-500 hover:text-zinc-950 dark:text-zinc-500 dark:hover:text-zinc-200 transition" />{" "}
@@ -106,6 +107,7 @@ export default function Profile() {
           </li>
           <li className="list-none">
             <Link
+              target="_blank"
               to="http://twitter.com/koobawuah"
               className="flex items-center"
             >
@@ -115,6 +117,7 @@ export default function Profile() {
           </li>
           <li className="list-none">
             <Link
+              target="_blank"
               to="http://github.com/koobawuah"
               className="flex items-center"
             >
@@ -124,6 +127,7 @@ export default function Profile() {
           </li>
           <li className="list-none">
             <Link
+              target="_blank"
               to="http://linkedin.com/in/bawuah-boakye-9b4362144"
               className="flex items-center"
             >
@@ -133,6 +137,7 @@ export default function Profile() {
           </li>
           <li className="list-none">
             <Link
+              target="_blank"
               to="http://behance.net/bawuahboakye"
               className="flex items-center"
             >
