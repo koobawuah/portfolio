@@ -1,15 +1,26 @@
 import { Link } from "@remix-run/react";
+import { motion } from "framer-motion";
 
 export default function Footer() {
   return (
     <div className="h-80 px-4 flex flex-col justify-between">
       <div className="w-full text-5xl leading-loose flex justify-center md:text-9xl ">
-        <h2 className="">Bawuah Boakye</h2>
+        <motion.h2
+          initial={{ opacity: 0.01 }}
+          whileInView={{ opacity: 1 }}
+          transition={{
+            duration: 1.28,
+            delay: 0.4,
+          }}
+          className="h-40 font-normal text-center bg-clip-text text-transparent bg-gradient-to-b from-zinc-950 to-zinc-500 dark:text-transparent dark:bg-gradient-to-b dark:from-zinc-50 dark:to-zinc-400 bg-opacity-50"
+        >
+          Bawuah Boakye
+        </motion.h2>
       </div>
 
       <div className="w-full py-3 flex flex-col-reverse md:flex-row md:justify-between md:items-center">
         <p className="md:py-10 text-base font-extralight text-zinc-500 dark:text-zinc-500">
-          Copyright {new Date().getFullYear()}. Made by{" "}
+          Copyright &copy; {new Date().getFullYear()}. Made by{" "}
           <a
             href="/"
             className="inline not-italic font-extralight text-zinc-950 dark:text-zinc-100"

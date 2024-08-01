@@ -1,6 +1,7 @@
 import { Link } from "@remix-run/react";
 import { motion } from "framer-motion";
 import { cn } from "~/lib/utils";
+import { CardDemo } from "./ui/gif-card";
 
 const ProjectListItem = ({
   projectLink,
@@ -35,11 +36,11 @@ const ProjectListItem = ({
       }}
       style={{ originY: 1 }}
       className={cn(
-        "relative w-56 h-80 rounded-xl overflow-hidden",
+        "relative min-w-56 h-80 rounded-xl overflow-hidden ",
         themeColor
       )}
     >
-      <Link
+      {/* <Link
         className="inset-0 p-6 h-full flex flex-col justify-between"
         to={projectLink ?? "#"}
       >
@@ -52,7 +53,8 @@ const ProjectListItem = ({
           </h3>
         </div>
         <img src={previewImage} className={cn("", previewImageStyle)} />
-      </Link>
+      </Link> */}
+      <CardDemo title={title} />
     </motion.li>
   </>
 );

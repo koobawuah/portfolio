@@ -10,11 +10,10 @@ import Profile from "~/components/profile";
 import ProjectListItem from "~/components/project-list-item";
 import RevealAnimation from "~/components/reveal-animation";
 import SubHeading from "~/components/sub-heading";
+import { CardDemo } from "~/components/ui/gif-card";
+import { PlaceholdersAndVanishInput } from "~/components/ui/placeholder-text-effect";
 // import ProjectPreview from "~/components/project-preview";
-import {
-  TypewriterEffect,
-  TypewriterEffectSmooth,
-} from "~/components/ui/typewriter-effect";
+import { TypewriterEffect } from "~/components/ui/typewriter-effect";
 
 export const meta: MetaFunction = () => {
   return [
@@ -28,9 +27,14 @@ export const meta: MetaFunction = () => {
 };
 
 export default function Index() {
-  const paragraph =
-    "Working on 1 web app, 2 websites, 1 brand identity design, building 2 startups & setting up farmlands.";
-  // const words = paragraph.map()
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    console.log(e.target.value);
+  };
+  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    console.log("submitted");
+  };
+
   const words = [
     { text: "Working " },
     { text: "on " },
@@ -51,6 +55,17 @@ export default function Index() {
     { text: "up " },
     { text: "farmlands..." },
   ];
+
+  const placeholders = [
+    "What are your rates?",
+    "How to start and run an e-commerce business?",
+    "Why are you a freelancer?",
+    "Where do you see yourself and your business in 5 years?",
+    "How to assemble your own PC?",
+    "Do you teach your skills?",
+    "Can you work on my ideas?",
+  ];
+
   return (
     <div className="h-full relative">
       {/* <h1>bawuahboakye</h1> */}
@@ -71,14 +86,36 @@ export default function Index() {
 
         <HeroHeading title="In the mean time, learn more about me..." />
 
-        <Profile />
+        <aside className="w-full flex flex-row justify-between p-6">
+          <Profile />
+
+          <div className="flex flex-1 "></div>
+        </aside>
 
         {/* <MultiPartProfile /> */}
       </section>
-      <section className="w-full max-h-80 my-10">
-        <ul className="h-full flex space-x-6 my-10">
-          {/* {projects &&
+
+      <section className="w-full max-h-max p-6 my-32">
+        <div className="max-w-5xl mx-auto">
+          <SubHeading title="Client Work & Personal Projects:" />
+          <p className="font-extralight text-lg dark:text-zinc-200">
+            You will find below, some works I am proud of and personal projects
+            I show off.{" "}
+            <em className="not-italic text-zinc-500 dark:text-zinc-400">
+              Patience, time and consistency have made me a jack of many trades,
+              but master of none... but the rest of that phrase is ...though
+              often times better than master of one.
+            </em>
+          </p>
+        </div>
+
+        <div className="flex space-x-6 my-10 overflow-x-scroll py-6">
+          {projects &&
+            projects.map((p, idx) => <CardDemo key={idx} title={p.title} />)}
+          {/* 
+          {projects &&
             projects.map((p, idx) => (
+              <CardDemo key={} title{p.title} />
               <ProjectListItem
                 key={idx}
                 title={p.title}
@@ -86,9 +123,30 @@ export default function Index() {
                 themeColor={p.themeColor}
                 previewImage={p.previewImage}
               />
-            ))} */}
-        </ul>
+            ))}
+        </ul> */}
+          <CardDemo title="Web Design" />
+          <CardDemo title="Web Design" />
+          <CardDemo title="Web Design" />
+          <CardDemo title="Web Design" />
+          <CardDemo title="Web Design" />
+          <CardDemo title="Web Design" />
+        </div>
       </section>
+
+      <section>
+        <div className="h-[40rem] flex flex-col justify-center  items-center px-4">
+          <h2 className="mb-10 sm:mb-20 text-xl text-center sm:text-5xl dark:text-white text-black">
+            Ask me Anything, I reply instantly!
+          </h2>
+          <PlaceholdersAndVanishInput
+            placeholders={placeholders}
+            onChange={handleChange}
+            onSubmit={onSubmit}
+          />
+        </div>
+      </section>
+
       <Footer />
     </div>
   );
@@ -133,6 +191,39 @@ const projects = [
     subtitle: "",
     projectLink: "https://behance.net/bawuahboakye/ttetl",
     themeColor: "bg-[#ff00ff]",
+    previewImage: "/ttetl-brochure-front.jpg",
+    previewImageStyle: "",
+  },
+  {
+    title: "E-commerce Web Development",
+    subtitle: "",
+    projectLink: "https://behance.net/bawuahboakye/ttetl",
+    themeColor: "bg-[#f3ca4d]",
+    previewImage: "/ttetl-brochure-front.jpg",
+    previewImageStyle: "",
+  },
+  {
+    title: "E-commerce Web Development",
+    titleStyle: "text-zinc-200",
+    subtitle: "",
+    projectLink: "https://behance.net/bawuahboakye/ttetl",
+    themeColor: "bg-[#14171f]",
+    previewImage: "/ttetl-brochure-front.jpg",
+    previewImageStyle: "",
+  },
+  {
+    title: "E-commerce Web Development",
+    subtitle: "",
+    projectLink: "https://behance.net/bawuahboakye/ttetl",
+    themeColor: "bg-[#ffff99]",
+    previewImage: "/ttetl-brochure-front.jpg",
+    previewImageStyle: "",
+  },
+  {
+    title: "E-commerce Web Development",
+    subtitle: "",
+    projectLink: "https://behance.net/bawuahboakye/ttetl",
+    themeColor: "bg-[#d0d4dc]",
     previewImage: "/ttetl-brochure-front.jpg",
     previewImageStyle: "",
   },
