@@ -120,7 +120,7 @@ export default function Index() {
         <div className="flex space-x-6 my-10 overflow-x-scroll py-6">
           {projects &&
             projects.map((p, idx) => (
-              <Link className="shrink-0" key={p.title + idx} to={p.projectLink}>
+              <Link className="" key={p.title + idx} to={p.projectLink}>
                 <CardDemo
                   key={idx}
                   title={p.title}

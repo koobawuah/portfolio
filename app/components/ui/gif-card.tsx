@@ -10,10 +10,10 @@ export function CardDemo({
   bgImg?: string;
 }) {
   return (
-    <div className="max-w-xs w-full shrink-0">
+    <div className="max-w-sm w-full shrink-0">
       <div
         className={cn(
-          "group w-full cursor-pointer overflow-hidden relative card h-[400px] rounded-md shadow-xl mx-auto flex flex-col justify-end p-4 border border-transparent dark:border-neutral-800",
+          "group w-72 cursor-pointer overflow-hidden relative card h-[400px] rounded-md shadow-xl mx-auto flex flex-col justify-end p-4 border border-transparent dark:border-zinc-800",
           // `bg-[url(https://images.unsplash.com/photo-1476842634003-7dcca8f832de?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80)] bg-cover`,
           `bg-[url(${bgImg})] bg-cover`,
           // Preload hover image by setting it in a pseudo-element
