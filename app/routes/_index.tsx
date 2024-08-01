@@ -24,8 +24,14 @@ export const meta: MetaFunction = () => {
       content:
         "Welcome to the personal portfolio of bawuahboakye. A freelancer, designer and developer!",
     },
+    {
+      name: "viewport",
+      content: "width=device-width, initial-scale=1, maximum-scale=1",
+    },
   ];
 };
+
+export async function action() {}
 
 // `https://notifi.it/api?credentials=${process.env.NOTIFI_CRED}&title=Bawuahboakye Website Message&message=${message}&link=https://notifi.it&image=https://notifi.it/images/logo.png"`,
 
@@ -37,9 +43,6 @@ export default function Index() {
   };
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    https.get(
-      `https://notifi.it/api?credentials=<>&title=Bawuahboakye Website Message&message=${message}&link=https://notifi.it&image=https://bawuahboakye.com/wp-content/uploads/2023/05/cropped-bawuahboakye-icon-192x192.png"`
-    );
     console.log("submitted");
   };
 
@@ -94,11 +97,7 @@ export default function Index() {
 
         <HeroHeading title="In the mean time, learn more about me..." />
 
-        {/* <aside className="w-full flex flex-row justify-between p-6"> */}
         <Profile />
-
-        {/* <div className="flex flex-1 "></div>
-        </aside> */}
 
         {/* <MultiPartProfile /> */}
       </section>
