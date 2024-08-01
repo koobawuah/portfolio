@@ -16,6 +16,7 @@ import { PlaceholdersAndVanishInput } from "~/components/ui/placeholder-text-eff
 import { TypewriterEffect } from "~/components/ui/typewriter-effect";
 import https from "https";
 import { Link } from "@remix-run/react";
+import { cn } from "~/lib/utils";
 
 export const meta: MetaFunction = () => {
   return [
@@ -77,6 +78,8 @@ export default function Index() {
     "Do you teach your skills?",
     "Can you work on my ideas?",
   ];
+
+  const img = "kwamekoda-site.png";
 
   return (
     <div className="h-full relative">
@@ -171,9 +174,9 @@ const projects = [
   {
     title: "Mobile App Development",
     subtitle: "Susubox Finance App",
-    projectLink: "https://behance.net/bawuahboakye/ttetl",
+    projectLink: "https://behance.net/bawuahboakye",
     themeColor: "bg-[#f3ca4d]",
-    previewImage: "/susubox-shot.png",
+    previewImage: "/images/susubox-shot.png",
     previewImageStyle: "",
   },
   {
@@ -182,7 +185,7 @@ const projects = [
     subtitle: "Buildbafla construction website",
     projectLink: "https://buildbafla.com",
     themeColor: "bg-[#14171f]",
-    previewImage: "/buildbafla-site.png",
+    previewImage: "/images/buildbafla-site.png",
     previewImageStyle: "",
   },
   {
@@ -190,7 +193,7 @@ const projects = [
     subtitle: "Mono Design Studio",
     projectLink: "https://behance.net/bawuahboakye/",
     themeColor: "bg-[#ffff99]",
-    previewImage: "/monodesignstudio.png",
+    previewImage: "/images/monodesignstudio.png",
     previewImageStyle: "",
   },
   {
@@ -198,7 +201,7 @@ const projects = [
     subtitle: "TTETL NGO",
     projectLink: "https://behance.net/bawuahboakye",
     themeColor: "bg-[#d0d4dc]",
-    previewImage: "/ttetl-brochure-front.jpg",
+    previewImage: "/images/ttetl-brochure-front.jpg",
     previewImageStyle: "",
   },
   {
@@ -206,7 +209,7 @@ const projects = [
     subtitle: "Fruitwist Juice",
     projectLink: "https://behance.net/bawuahboakye",
     themeColor: "bg-[#ff00ff]",
-    previewImage: "/fruitwist-product-shoot.png",
+    previewImage: "/images/fruitwist-product-shoot.png",
     previewImageStyle: "",
   },
   {
@@ -214,7 +217,7 @@ const projects = [
     subtitle: "Versace magazine",
     projectLink: "https://behance.net/bawuahboakye",
     themeColor: "bg-[#f3ca4d]",
-    previewImage: "/versace-magazine-showcase.jpg",
+    previewImage: "/images/versace-magazine-showcase.jpg",
     previewImageStyle: "",
   },
   {
@@ -222,7 +225,7 @@ const projects = [
     subtitle: "Kwamekoda Personal Website",
     projectLink: "https://kwamekoda.com",
     themeColor: "bg-[#14171f]",
-    previewImage: "/kwamekoda-site.png",
+    previewImage: "/images/kwamekoda-site.png",
     previewImageStyle: "",
   },
   {
@@ -230,7 +233,7 @@ const projects = [
     subtitle: "Global Collections Books",
     projectLink: "https://globalcollectionsbooks.com",
     themeColor: "bg-[#ffff99]",
-    previewImage: "/globalcollectionsbooks.png",
+    previewImage: "/images/globalcollectionsbooks.png",
     previewImageStyle: "",
   },
   {
@@ -238,7 +241,7 @@ const projects = [
     subtitle: "Versace PO System",
     projectLink: "https://behance.net/bawuahboakye",
     themeColor: "bg-[#d0d4dc]",
-    previewImage: "/versace-pos.jpg",
+    previewImage: "/images/versace-pos.jpg",
     previewImageStyle: "",
   },
 ];
