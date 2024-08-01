@@ -15,6 +15,7 @@ import { PlaceholdersAndVanishInput } from "~/components/ui/placeholder-text-eff
 // import ProjectPreview from "~/components/project-preview";
 import { TypewriterEffect } from "~/components/ui/typewriter-effect";
 import https from "https";
+import { Link } from "@remix-run/react";
 
 export const meta: MetaFunction = () => {
   return [
@@ -118,7 +119,16 @@ export default function Index() {
 
         <div className="flex space-x-6 my-10 overflow-x-scroll py-6">
           {projects &&
-            projects.map((p, idx) => <CardDemo key={idx} title={p.title} />)}
+            projects.map((p, idx) => (
+              <Link className="shrink-0" key={p.title + idx} to={p.projectLink}>
+                <CardDemo
+                  key={idx}
+                  title={p.title}
+                  excerpt={p.subtitle}
+                  bgImg={p.previewImage}
+                />
+              </Link>
+            ))}
           {/* 
           {projects &&
             projects.map((p, idx) => (
@@ -159,77 +169,76 @@ export default function Index() {
 
 const projects = [
   {
-    title: "E-commerce Web Development",
-    subtitle: "",
+    title: "Mobile App Development",
+    subtitle: "Susubox Finance App",
     projectLink: "https://behance.net/bawuahboakye/ttetl",
     themeColor: "bg-[#f3ca4d]",
-    previewImage: "/ttetl-brochure-front.jpg",
+    previewImage: "/susubox-shot.png",
     previewImageStyle: "",
   },
   {
-    title: "E-commerce Web Development",
+    title: "Web Development",
     titleStyle: "text-zinc-200",
-    subtitle: "",
-    projectLink: "https://behance.net/bawuahboakye/ttetl",
+    subtitle: "Buildbafla construction website",
+    projectLink: "https://buildbafla.com",
     themeColor: "bg-[#14171f]",
-    previewImage: "/ttetl-brochure-front.jpg",
+    previewImage: "/buildbafla-site.png",
     previewImageStyle: "",
   },
   {
-    title: "E-commerce Web Development",
-    subtitle: "",
-    projectLink: "https://behance.net/bawuahboakye/ttetl",
+    title: "Web Development",
+    subtitle: "Mono Design Studio",
+    projectLink: "https://behance.net/bawuahboakye/",
     themeColor: "bg-[#ffff99]",
-    previewImage: "/ttetl-brochure-front.jpg",
+    previewImage: "/monodesignstudio.png",
     previewImageStyle: "",
   },
   {
-    title: "E-commerce Web Development",
-    subtitle: "",
-    projectLink: "https://behance.net/bawuahboakye/ttetl",
+    title: "Graphics Design",
+    subtitle: "TTETL NGO",
+    projectLink: "https://behance.net/bawuahboakye",
     themeColor: "bg-[#d0d4dc]",
     previewImage: "/ttetl-brochure-front.jpg",
     previewImageStyle: "",
   },
   {
-    title: "E-commerce Web Development",
-    subtitle: "",
-    projectLink: "https://behance.net/bawuahboakye/ttetl",
+    title: "Product Photoshoot",
+    subtitle: "Fruitwist Juice",
+    projectLink: "https://behance.net/bawuahboakye",
     themeColor: "bg-[#ff00ff]",
-    previewImage: "/ttetl-brochure-front.jpg",
+    previewImage: "/fruitwist-product-shoot.png",
     previewImageStyle: "",
   },
   {
-    title: "E-commerce Web Development",
-    subtitle: "",
-    projectLink: "https://behance.net/bawuahboakye/ttetl",
+    title: "Graphics Design",
+    subtitle: "Versace magazine",
+    projectLink: "https://behance.net/bawuahboakye",
     themeColor: "bg-[#f3ca4d]",
-    previewImage: "/ttetl-brochure-front.jpg",
+    previewImage: "/versace-magazine-showcase.jpg",
     previewImageStyle: "",
   },
   {
-    title: "E-commerce Web Development",
-    titleStyle: "text-zinc-200",
-    subtitle: "",
-    projectLink: "https://behance.net/bawuahboakye/ttetl",
+    title: "Web Development",
+    subtitle: "Kwamekoda Personal Website",
+    projectLink: "https://kwamekoda.com",
     themeColor: "bg-[#14171f]",
-    previewImage: "/ttetl-brochure-front.jpg",
+    previewImage: "/kwamekoda-site.png",
     previewImageStyle: "",
   },
   {
-    title: "E-commerce Web Development",
-    subtitle: "",
-    projectLink: "https://behance.net/bawuahboakye/ttetl",
+    title: "E-commerce Website",
+    subtitle: "Global Collections Books",
+    projectLink: "https://globalcollectionsbooks.com",
     themeColor: "bg-[#ffff99]",
-    previewImage: "/ttetl-brochure-front.jpg",
+    previewImage: "/globalcollectionsbooks.png",
     previewImageStyle: "",
   },
   {
-    title: "E-commerce Web Development",
-    subtitle: "",
-    projectLink: "https://behance.net/bawuahboakye/ttetl",
+    title: "POS Installation",
+    subtitle: "Versace PO System",
+    projectLink: "https://behance.net/bawuahboakye",
     themeColor: "bg-[#d0d4dc]",
-    previewImage: "/ttetl-brochure-front.jpg",
+    previewImage: "/versace-pos.jpg",
     previewImageStyle: "",
   },
 ];

@@ -127,7 +127,8 @@ export default function Profile() {
             onClick={() => window.open("https://read.cv/koobawuah", "_blank")}
             className="inline-flex h-12 animate-shimmer items-center justify-center rounded-full border border-zinc-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 font-semibold text-sm text-zinc-100 transition-colors focus:outline-none focus:ring-2 focus:ring-zinc-400 focus:ring-offset-2 focus:ring-offset-zinc-50"
           >
-            View My Resume <OpenInNewWindowIcon className="size-1 ml-4" />
+            View My Resume{" "}
+            <OpenInNewWindowIcon className="size-5 stroke-2 ml-3" />
           </button>
         </div>
 
@@ -135,12 +136,15 @@ export default function Profile() {
           <h2 className="w-auto font-semibold text-sm py-2.5 text-zinc-500">
             Services:
           </h2>
-          <div className="">
-            <ul>
+          <div className="px-4">
+            <ul className="list-disc font-extralight text-base ">
               <li>Website Design & Development</li>
-              <li>Graphics Design</li>
               <li>Software & Application Development</li>
-              <li>Photography</li>
+              <li>Mobile Application Development</li>
+              <li>Logo & Brand Identity Design</li>
+              <li>Graphics Design</li>
+              <li>Product Photography</li>
+              <li>I.T Consultation</li>
             </ul>
           </div>
         </div>

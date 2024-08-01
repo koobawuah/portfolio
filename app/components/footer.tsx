@@ -31,9 +31,11 @@ export default function Footer() {
         <nav className="w-40 md:py-10 py-3">
           <ul className="w-full flex justify-between items-center text-base font-extralight ">
             <li className="text-zinc-500 hover:text-zinc-950 dark:text-zinc-500 dark:hover:text-zinc-100 transition">
-              <Link to="/">Tech Stack</Link>
+              <Link to="https://unequaled-notify-587.notion.site/My-Tech-Stack-5484c6aee99c456fb3585dead53bbe9e?pvs=4">
+                Tech Stack
+              </Link>
             </li>
-            <li className="text-zinc-500 hover:text-zinc-950 dark:text-zinc-500 dark:hover:text-zinc-100 transition">
+            <li className="text-zinc-500 hover:text-zinc-950 dark:text-zinc-500 dark:hover:text-zinc-100 transition hidden">
               <Link to="/">Archive</Link>
             </li>
           </ul>
