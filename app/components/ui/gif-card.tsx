@@ -4,19 +4,20 @@ export function CardDemo({
   title,
   excerpt,
   bgImg,
+  className,
 }: {
   title: string;
   excerpt?: string;
-  bgImg: string;
+  bgImg?: string;
+  className?: string;
 }) {
   return (
     <div className="max-w-sm w-full shrink-0">
       <div
         className={cn(
+          className,
           "group w-72 cursor-pointer overflow-hidden relative card h-[400px] rounded-md shadow-xl mx-auto flex flex-col justify-end p-4 border border-transparent dark:border-zinc-800",
           // `bg-[url(https://images.unsplash.com/photo-1476842634003-7dcca8f832de?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80)] bg-cover`,
-          // `bg-[url('/images/fruitwist-product-shoot.png')] bg-cover`,
-          `bg-[url('${bgImg}')] bg-cover`,
           // Preload hover image by setting it in a pseudo-element
           // `before:bg-[url(https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExNWlodTF3MjJ3NnJiY3Rlc2J0ZmE0c28yeWoxc3gxY2VtZzA5ejF1NSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/syEfLvksYQnmM/giphy.gif)] before:fixed before:inset-0 before:opacity-0 before:z-[-1]`,
           // `hover:bg-[url(https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExNWlodTF3MjJ3NnJiY3Rlc2J0ZmE0c28yeWoxc3gxY2VtZzA5ejF1NSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/syEfLvksYQnmM/giphy.gif)]`,
@@ -24,11 +25,15 @@ export function CardDemo({
           "transition-all duration-500"
         )}
       >
+        <img
+          src={bgImg}
+          className="w-full h-full absolute object-cover object-left inset-0"
+        />
         <div className="text relative z-50">
-          <h1 className="font-bold text-xl md:text-3xl text-gray-50 relative">
+          <h1 className="font-bold text-xl md:text-3xl text-gray-50 relative drop-shadow-2xl">
             {title}
           </h1>
-          <p className="font-normal text-base text-gray-50 relative my-4">
+          <p className="font-normal text-base text-gray-50 relative my-4 drop-shadow-xl">
             {excerpt}
           </p>
         </div>
