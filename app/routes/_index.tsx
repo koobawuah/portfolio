@@ -1,6 +1,6 @@
 import type { MetaFunction } from "@remix-run/node";
-import { Link } from "@remix-run/react";
 import { motion } from "framer-motion";
+import { useState } from "react";
 import { CtaAction } from "~/components/CtaAction";
 import Footer from "~/components/footer";
 import Header from "~/components/header";
@@ -14,6 +14,7 @@ import { CardDemo } from "~/components/ui/gif-card";
 import { PlaceholdersAndVanishInput } from "~/components/ui/placeholder-text-effect";
 // import ProjectPreview from "~/components/project-preview";
 import { TypewriterEffect } from "~/components/ui/typewriter-effect";
+import https from "https";
 
 export const meta: MetaFunction = () => {
   return [
@@ -26,12 +27,19 @@ export const meta: MetaFunction = () => {
   ];
 };
 
+// `https://notifi.it/api?credentials=${process.env.NOTIFI_CRED}&title=Bawuahboakye Website Message&message=${message}&link=https://notifi.it&image=https://notifi.it/images/logo.png"`,
+
 export default function Index() {
+  const [message, setMessage] = useState("");
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(e.target.value);
+    setMessage(e.target.value);
+    // console.log(e.target.value);
   };
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    https.get(
+      `https://notifi.it/api?credentials=<>&title=Bawuahboakye Website Message&message=${message}&link=https://notifi.it&image=https://bawuahboakye.com/wp-content/uploads/2023/05/cropped-bawuahboakye-icon-192x192.png"`
+    );
     console.log("submitted");
   };
 
@@ -86,16 +94,16 @@ export default function Index() {
 
         <HeroHeading title="In the mean time, learn more about me..." />
 
-        <aside className="w-full flex flex-row justify-between p-6">
-          <Profile />
+        {/* <aside className="w-full flex flex-row justify-between p-6"> */}
+        <Profile />
 
-          <div className="flex flex-1 "></div>
-        </aside>
+        {/* <div className="flex flex-1 "></div>
+        </aside> */}
 
         {/* <MultiPartProfile /> */}
       </section>
 
-      <section className="w-full max-h-max p-6 my-32">
+      <section className="w-full max-h-max p-6 my-12">
         <div className="max-w-5xl mx-auto">
           <SubHeading title="Client Work & Personal Projects:" />
           <p className="font-extralight text-lg dark:text-zinc-200">
@@ -125,19 +133,17 @@ export default function Index() {
               />
             ))}
         </ul> */}
-          <CardDemo title="Web Design" />
-          <CardDemo title="Web Design" />
-          <CardDemo title="Web Design" />
-          <CardDemo title="Web Design" />
-          <CardDemo title="Web Design" />
-          <CardDemo title="Web Design" />
         </div>
       </section>
 
-      <section>
-        <div className="h-[40rem] flex flex-col justify-center  items-center px-4">
-          <h2 className="mb-10 sm:mb-20 text-xl text-center sm:text-5xl dark:text-white text-black">
+      <section className="">
+        <div className="h-[40rem] flex flex-col justify-center items-center px-6">
+          <h2 className="mb-10 sm:mb-6 text-xl text-center sm:text-5xl dark:text-white text-black">
             Ask me Anything, I reply instantly!
+            <span className="text-sm my-6 block text-zinc-500 dark:text-zinc-400">
+              Add '@yoursocialhandle', I will reply over on Instagram or
+              X/Twitter
+            </span>
           </h2>
           <PlaceholdersAndVanishInput
             placeholders={placeholders}
