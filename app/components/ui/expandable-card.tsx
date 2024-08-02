@@ -145,7 +145,7 @@ export function ExpandableCard({
         key={`card-${title}`}
         onClick={() => setActive(true)}
         // className="p-4 flex flex-col md:flex-row justify-between items-center hover:bg-neutral-50 dark:hover:bg-neutral-800 rounded-xl cursor-pointer"
-        className="underline text-zinc-500 dark:hover:text-zinc-200 inline cursor-pointer transition"
+        className="inline underline text-zinc-500 dark:hover:text-zinc-200 cursor-pointer transition"
       >
         {triggerExpandableCardText}
       </motion.div>

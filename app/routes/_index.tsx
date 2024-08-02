@@ -1,22 +1,22 @@
 import type { MetaFunction } from "@remix-run/node";
-import { motion } from "framer-motion";
 import { useState } from "react";
 import { CtaAction } from "~/components/CtaAction";
 import Footer from "~/components/footer";
 import Header from "~/components/header";
 import HeroHeading from "~/components/hero-heading";
-// import MultiPartProfile from "~/components/multipart-profile";
 import Profile from "~/components/profile";
-import ProjectListItem from "~/components/project-list-item";
 import RevealAnimation from "~/components/reveal-animation";
 import SubHeading from "~/components/sub-heading";
-import { CardDemo } from "~/components/ui/gif-card";
 import { PlaceholdersAndVanishInput } from "~/components/ui/placeholder-text-effect";
-// import ProjectPreview from "~/components/project-preview";
 import { TypewriterEffect } from "~/components/ui/typewriter-effect";
-import https from "https";
-import { Link } from "@remix-run/react";
+import { useFetcher } from "@remix-run/react";
 import { cn } from "~/lib/utils";
+import { UniqueParagraph } from "~/components/unique-paragraph";
+import ProjectPreview from "~/components/project-preview";
+import { RiServiceLine } from "react-icons/ri";
+import { MdWorkOutline } from "react-icons/md";
+import { TbMailShare } from "react-icons/tb";
+import { HiOutlineArrowSmallUp } from "react-icons/hi2";
 
 export const meta: MetaFunction = () => {
   return [
@@ -33,19 +33,22 @@ export const meta: MetaFunction = () => {
   ];
 };
 
-export async function action() {}
-
-// `https://notifi.it/api?credentials=${process.env.NOTIFI_CRED}&title=Bawuahboakye Website Message&message=${message}&link=https://notifi.it&image=https://notifi.it/images/logo.png"`,
-
 export default function Index() {
   const [message, setMessage] = useState("");
+  const send = useFetcher();
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setMessage(e.target.value);
     // console.log(e.target.value);
   };
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("submitted");
+
+    e.currentTarget.elements[0]?.setAttribute("name", "message");
+    const form = new FormData(e.currentTarget);
+
+    send.submit(form, { action: "/send", method: "post" });
+
+    // console.log("submitted");
   };
 
   const words = [
@@ -79,14 +82,13 @@ export default function Index() {
     "Can you work on my ideas?",
   ];
 
-  const img = "kwamekoda-site.png";
-
   return (
     <div className="h-full relative">
-      {/* <h1>bawuahboakye</h1> */}
       <CtaAction
         title="FREE 15 MINS CALL"
         ctaLink="https://cal.com/bawuahboakye/free-15-mins"
+        buttonClassName="fixed top-6 right-6 z-[60] md:top-[70px]"
+        icon
       />
       <Header />
       <section className="w-full max-h-min px-5 py-10">
@@ -109,42 +111,62 @@ export default function Index() {
       <section className="w-full max-h-max p-6 my-12">
         <div className="max-w-5xl mx-auto">
           <SubHeading title="Client Work & Personal Projects:" />
-          <p className="font-extralight text-lg dark:text-zinc-200">
-            You will find below, some works I am proud of and personal projects
-            I show off.{" "}
-            <em className="not-italic text-zinc-500 dark:text-zinc-400">
-              Patience, time and consistency have made me a jack of many trades,
+          <UniqueParagraph
+            boldText="You will find below, some works I am proud of and personal projects
+            I show off."
+            regularText="Patience, time and consistency have made me a jack of many trades,
               but master of none... but the rest of that phrase is ...though
-              often times better than master of one.
-            </em>
-          </p>
+              often times better than master of one."
+          />
         </div>
 
-        <div className="flex space-x-6 my-10 overflow-x-scroll py-6">
-          {projects &&
-            projects.map((p, idx) => (
-              <Link className="" key={p.title + idx} to={p.projectLink}>
-                <CardDemo
-                  key={idx}
-                  title={p.title}
-                  excerpt={p.subtitle}
-                  bgImg={p.previewImage}
-                />
-              </Link>
-            ))}
-          {/* 
-          {projects &&
-            projects.map((p, idx) => (
-              <CardDemo key={} title{p.title} />
-              <ProjectListItem
-                key={idx}
-                title={p.title}
-                projectLink={p.projectLink}
-                themeColor={p.themeColor}
-                previewImage={p.previewImage}
-              />
-            ))}
-        </ul> */}
+        <div className="-mx-6">
+          <ProjectPreview projects={projects} />
+        </div>
+      </section>
+
+      <section className="px-6 space-y-16">
+        <div className="max-w-5xl mx-auto">
+          <SubHeading title="How to get started:" />
+          <UniqueParagraph boldText="I curated a few links for you to easily and quickly reach me for your ideas to become a reality!" />
+        </div>
+
+        <div className="w-full flex flex-col sm:flex-row sm:max-w-5xl sm:mx-auto sm:items-center space-y-6 sm:space-y-0 sm:space-x-6 ">
+          <CtaAction
+            title="BOOK CLIENT CALL"
+            ctaLink="https://cal.com/bawuahboakye/client-call"
+            icon={
+              <MdWorkOutline className="ml-2 size-4 fill-zinc-800 dark:fill-zinc-200" />
+            }
+          />
+          <CtaAction
+            title="LET'S TALK"
+            ctaLink="https://cal.com/bawuahboakye"
+            icon={
+              <HiOutlineArrowSmallUp className="ml-2 size-4 fill-zinc-800 rotate-45" />
+            }
+          />
+          <CtaAction
+            title="SERVICE REQUEST CALL"
+            ctaLink="https://cal.com/bawuahboakye/service-request"
+            icon={
+              <RiServiceLine className="ml-2 size-4 fill-zinc-800 dark:fill-zinc-200" />
+            }
+          />
+          <CtaAction
+            title="SEND ME A MAIL"
+            ctaLink="mailto:me@bawuahboakye.com"
+            icon={
+              <TbMailShare className="ml-2 size-4 stroke-zinc-800 dark:stroke-zinc-200" />
+            }
+          />
+          <CtaAction
+            title="PROJECT DISCOVERY"
+            ctaLink="https://cal.com/bawuahboakye/service-request"
+            icon={
+              <HiOutlineArrowSmallUp className="ml-2 size-4 fill-zinc-800 rotate-45" />
+            }
+          />
         </div>
       </section>
 
@@ -153,8 +175,8 @@ export default function Index() {
           <h2 className="mb-10 sm:mb-6 text-xl text-center sm:text-5xl dark:text-white text-black">
             Ask me Anything, I reply instantly!
             <span className="text-sm my-6 block text-zinc-500 dark:text-zinc-400">
-              Add '@yoursocialhandle', I will reply over on Instagram or
-              X/Twitter
+              Add '@yoursocialhandle' to your message, I will reply over on
+              Instagram or X/Twitter
             </span>
           </h2>
           <PlaceholdersAndVanishInput
@@ -162,6 +184,16 @@ export default function Index() {
             onChange={handleChange}
             onSubmit={onSubmit}
           />
+          <p
+            className={cn(
+              "text-xs self-cener my-2",
+              send.state === "idle" && send.data
+                ? "text-green-600 dark:text-green-400"
+                : "hidden"
+            )}
+          >
+            I have received your message successfully!
+          </p>
         </div>
       </section>
 

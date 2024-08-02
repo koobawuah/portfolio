@@ -17,7 +17,7 @@ export default function Profile() {
       initial={{ opacity: 0.15 }}
       whileInView={{ opacity: 1 }}
       transition={{ delay: 0.4, duration: 0.8 }}
-      className="max-w-max space-y-5 mx-auto flex flex-col justify-center items-start md:space-x-5 md:flex-row"
+      className="max-w-max space-y-5 mx-auto flex flex-col justify-center items-start md:space-x-6 md:flex-row"
     >
       <div className="mx-auto py-5">
         <img
@@ -27,7 +27,7 @@ export default function Profile() {
       </div>
       <div className="flex flex-col space-y-6">
         <div className="max-w-xl ">
-          <p className="font-extralight text-lg dark:text-zinc-200">
+          <span className="font-extralight text-lg dark:text-zinc-200">
             A self-taught designer and software developer from Ghana, with over
             8 years in the design and software space.{" "}
             <em className="not-italic text-zinc-500 dark:text-zinc-400">
@@ -91,7 +91,7 @@ export default function Profile() {
                 </>
               )}
             />
-          </p>
+          </span>
         </div>
 
         <div className="w-96">
@@ -105,7 +105,7 @@ export default function Profile() {
             </em>
           </p>
           <br />
-          <p className="font-extralight text-base dark:text-zinc-200">
+          <span className="font-extralight text-base dark:text-zinc-200 space-y-4">
             Previously worked at Polymorph Labs,{" "}
             <LinkPreview
               url="https://ug.edu.gh"
@@ -121,11 +121,11 @@ export default function Profile() {
               Multisoft Solutions
             </LinkPreview>
             ...
-          </p>
+          </span>
           <br />
           <button
             onClick={() => window.open("https://read.cv/koobawuah", "_blank")}
-            className="inline-flex h-12 animate-shimmer items-center justify-center rounded-full border border-zinc-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 font-semibold text-sm text-zinc-100 transition-colors focus:outline-none focus:ring-2 focus:ring-zinc-400 focus:ring-offset-2 focus:ring-offset-zinc-50"
+            className="mt-4 inline-flex h-12 animate-shimmer items-center justify-center rounded-full border border-zinc-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 font-semibold text-sm text-zinc-100 transition-colors focus:outline-none focus:ring-2 focus:ring-zinc-400 focus:ring-offset-2 focus:ring-offset-zinc-50"
           >
             View My Resume{" "}
             <OpenInNewWindowIcon className="size-5 stroke-2 ml-3" />

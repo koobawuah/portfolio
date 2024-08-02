@@ -5,18 +5,20 @@ export const CtaAction = ({
   buttonClassName,
   ctaLink,
   ctaTextClassName,
+  icon,
 }: {
   title: string;
   buttonClassName?: string;
   ctaLink: string;
   ctaTextClassName?: string;
+  icon: boolean | React.ReactNode;
 }) => {
   return (
     <>
       <button
         onClick={() => window.open(ctaLink, "_blank")}
         className={cn(
-          "fixed top-4 right-6 z-[60] inline-flex h-12 overflow-hidden rounded-full p-[1.5px] focus:outline-none focus:ring-4 focus:ring-slate-400 focus:ring-offset-4 focus:ring-offset-zinc-50",
+          "relative inline-flex h-12 overflow-hidden rounded-full p-[1.5px] focus:outline-none focus:ring-4 focus:ring-slate-400 focus:ring-offset-4 focus:ring-offset-zinc-50",
           buttonClassName
         )}
       >
@@ -28,7 +30,11 @@ export const CtaAction = ({
           )}
         >
           {title}
-          <SparkIcon className="ml-2 size-4 fill-zinc-800" />
+          {icon === false ? null : icon === true ? (
+            <SparkIcon className="ml-2 size-4 fill-zinc-800" />
+          ) : (
+            icon
+          )}
         </span>
       </button>
       {/* <motion.div className="fixed top-4 right-6 z-50">{title}</motion.div>) */}
