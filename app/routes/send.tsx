@@ -14,15 +14,15 @@ export async function action({ request }: ActionFunctionArgs) {
       "https://portfolio-nine-coral-28.vercel.app/favicons/favicon-32x32.png",
   };
 
-  console.log("(received) On server " + message);
+  console.log("(received) " + message);
 
   try {
     https.get(
       `https://notifi.it/api?credentials=${process.env.NOTIFI_CRED}&title=${sendNotification.title}&message=${message}&link=${sendNotification.link}&image=${sendNotification.image}`
     );
-    return json({ status: 200 });
   } catch (e) {
     console.error("Sorry, something went wrong: " + e);
     throw new Error("Unable to send message: " + e);
   }
+  return json({ status: 200 });
 }
