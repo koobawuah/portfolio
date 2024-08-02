@@ -43,3 +43,7 @@ export async function action({ request }: ActionFunctionArgs) {
   }
   return json({ status: 200 });
 }
+
+export default function SendNotification() {
+  return <>Sending notification...</>;
+}
