@@ -7,14 +7,14 @@ export async function action({ request }: ActionFunctionArgs) {
 
   const sendNotification = {
     credentials: process.env.NOTIFI_CRED,
-    title: "New message from website",
+    title: "New message from Portfolio website",
     message: message,
     link: "https://notifi.it/",
     image:
       "https://portfolio-nine-coral-28.vercel.app/favicons/favicon-32x32.png",
   };
 
-  console.log("(received)Server says " + message);
+  console.log("(received) On server " + message);
 
   try {
     https.get(
