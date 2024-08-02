@@ -20,7 +20,7 @@ import { HiOutlineArrowSmallUp } from "react-icons/hi2";
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "bawuahboakye | Freelancer. Designer. Developer." },
+    { title: "Bawuahboakye | Freelancer. Designer. Developer." },
     {
       name: "description",
       content:
