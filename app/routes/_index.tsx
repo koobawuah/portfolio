@@ -16,7 +16,7 @@ import ProjectPreview from "~/components/project-preview";
 import { RiServiceLine } from "react-icons/ri";
 import { MdWorkOutline } from "react-icons/md";
 import { TbMailShare } from "react-icons/tb";
-import { HiOutlineArrowSmallUp } from "react-icons/hi2";
+import { HiArrowUpRight, HiOutlineArrowSmallUp } from "react-icons/hi2";
 
 export const meta: MetaFunction = () => {
   return [
@@ -143,7 +143,7 @@ export default function Index() {
             title="LET'S TALK"
             ctaLink="https://cal.com/bawuahboakye"
             icon={
-              <HiOutlineArrowSmallUp className="ml-2 size-4 fill-zinc-800 rotate-45" />
+              <HiArrowUpRight className="ml-2 size-4 fill-zinc-800 dark:fill-zinc-200" />
             }
           />
           <CtaAction
@@ -164,7 +164,7 @@ export default function Index() {
             title="PROJECT DISCOVERY"
             ctaLink="https://cal.com/bawuahboakye/service-request"
             icon={
-              <HiOutlineArrowSmallUp className="ml-2 size-4 fill-zinc-800 rotate-45" />
+              <HiArrowUpRight className="ml-2 size-4 fill-zinc-800 dark:fill-zinc-200" />
             }
           />
         </div>
