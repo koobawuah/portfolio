@@ -52,7 +52,7 @@ export async function action({ request }: ActionFunctionArgs) {
   }
 
   const transporter = nodemailer.createTransport({
-    host: "bawuahboakye.com",
+    host: "server182.web-hosting.com",
     port: 465,
     secure: true,
     auth: {
