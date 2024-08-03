@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { LinksFunction } from "@remix-run/node";
 import stylesheet from "~/tailwind.css?url";
 import {
@@ -6,7 +7,9 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  useLocation,
 } from "@remix-run/react";
+import posthog from "posthog-js";
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: stylesheet },
@@ -31,6 +34,11 @@ export const links: LinksFunction = () => [
 ];
 
 export function Layout({ children }: { children: React.ReactNode }) {
+  const location = useLocation();
+  useEffect(() => {
+    posthog.capture("$pageview");
+  }, [location]);
+
   return (
     <html lang="en">
       <head>

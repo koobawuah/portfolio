@@ -5,14 +5,28 @@
  */
 
 import { RemixBrowser } from "@remix-run/react";
-import { startTransition, StrictMode } from "react";
+import { useEffect, startTransition, StrictMode } from "react";
 import { hydrateRoot } from "react-dom/client";
+import posthog from "posthog-js";
+
+function PosthogInit() {
+  useEffect(() => {
+    posthog.init("phc_wR2ewL0MIqewVk5AhVvm4fzED7HQtyPgQ5C5rsaKsOX", {
+      api_host: "https://us.i.posthog.com",
+      // person_profiles: "identified_only",
+      person_profiles: "always",
+    });
+  }, []);
+
+  return null;
+}
 
 startTransition(() => {
   hydrateRoot(
     document,
     <StrictMode>
       <RemixBrowser />
+      <PosthogInit />
     </StrictMode>
   );
 });

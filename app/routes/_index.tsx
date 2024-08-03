@@ -16,7 +16,8 @@ import ProjectPreview from "~/components/project-preview";
 import { RiServiceLine } from "react-icons/ri";
 import { MdWorkOutline } from "react-icons/md";
 import { TbMailShare } from "react-icons/tb";
-import { HiArrowUpRight, HiOutlineArrowSmallUp } from "react-icons/hi2";
+import { HiArrowUpRight } from "react-icons/hi2";
+import posthog from "posthog-js";
 
 export const meta: MetaFunction = () => {
   return [
@@ -41,6 +42,7 @@ export default function Index() {
     // console.log(e.target.value);
   };
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    posthog.capture("Submitted question or email");
     e.preventDefault();
 
     e.currentTarget.elements[0]?.setAttribute("name", "message");
@@ -176,7 +178,7 @@ export default function Index() {
             Ask me Anything, I reply instantly!
             <span className="text-sm my-6 block text-zinc-500 dark:text-zinc-400">
               Add '@yoursocialhandle' to your message, I will reply over on
-              Instagram or X/Twitter
+              Instagram or X/Twitter. Or join my newsletter with your email!
             </span>
           </h2>
           <PlaceholdersAndVanishInput
