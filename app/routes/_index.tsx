@@ -7,7 +7,7 @@ import HeroHeading from "~/components/hero-heading";
 import Profile from "~/components/profile";
 import RevealAnimation from "~/components/reveal-animation";
 import SubHeading from "~/components/sub-heading";
-import * as _ from "~/site.json";
+import * as site from "~/site.json";
 import { PlaceholdersAndVanishInput } from "~/components/ui/placeholder-text-effect";
 import { TypewriterEffect } from "~/components/ui/typewriter-effect";
 import { useFetcher } from "@remix-run/react";
@@ -25,7 +25,7 @@ export const meta: MetaFunction = () => {
     { title: "Bawuahboakye | Freelancer. Designer. Developer." },
     {
       name: "description",
-      content: _.description,
+      content: site.description,
     },
     {
       name: "viewport",
@@ -39,7 +39,6 @@ export default function Index() {
   const send = useFetcher();
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setMessage(e.target.value);
-    // console.log(e.target.value);
   };
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     posthog.capture("Submitted question or email");
@@ -51,25 +50,45 @@ export default function Index() {
     send.submit(form, { action: "/send", method: "post" });
   };
 
-  const words = _.whatIAmDoing.split(" ").map((l, idx) => ({
+  const words = site.whatIAmDoing.split(" ").map((l, idx) => ({
     text: l + " ",
   }));
 
   const placeholders = [
     "What are your rates?",
     "How to start and run an e-commerce business?",
+    "Do you have books or resources?",
     "Why are you a freelancer?",
     "Where do you see yourself and your business in 5 years?",
     "How to assemble your own PC?",
     "Do you teach your skills?",
+    "Is there a place we can see your archived projects?",
     "Can you work on my ideas?",
   ];
+
+  console.log(new Intl.DateTimeFormat().format());
 
   return (
     <div className="h-full relative">
       <CtaAction
-        title="FREE 15 MINS CALL"
-        ctaLink="https://cal.com/bawuahboakye/free-15-mins"
+        title={
+          site.websiteCtaButton.index.title &&
+          new Date(site.websiteCtaButton.index.startDate).toISOString() >=
+            new Date().toISOString() &&
+          new Date(site.websiteCtaButton.index.endDate).toISOString() >=
+            new Date().toISOString()
+            ? site.websiteCtaButton.index.title
+            : "FREE 15 MINS CALL"
+        }
+        ctaLink={
+          site.websiteCtaButton.index.link &&
+          new Date(site.websiteCtaButton.index.startDate).toISOString() >=
+            new Date().toISOString() &&
+          new Date(site.websiteCtaButton.index.endDate).toISOString() <=
+            new Date().toISOString()
+            ? site.websiteCtaButton.index.link
+            : "https://cal.com/bawuahboakye/free-15-mins"
+        }
         buttonClassName="fixed top-6 right-6 z-[60] md:top-[70px]"
         icon
       />
