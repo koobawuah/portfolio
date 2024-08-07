@@ -1,0 +1,24 @@
+{
+  "title": "Bawuahboakye",
+  "description": "Welcome to the personal portfolio of bawuahboakye. A freelancer, designer and developer!",
+  "favicon": "/favicon/favicon-16x16.png",
+  "whatIAmDoing": "Working on 1 web app, 2 websites, 1 brand identity design, building 2 startups & setting up farmlands...",
+  "websiteBanners": {
+    "index": {
+      "startDate": "2024-07-08T00:00:00.000Z",
+      "endDate": "2024-07-16T23:59:00.000Z",
+      "text": "",
+      "link": "",
+      "type": ""
+    }
+  },
+  "websiteCtaButton": {
+    "index": {
+      "startDate": "2024-04-24T00:00:00.000Z",
+      "endDate": "2024-05-24T00:00:00.000Z",
+      "kind": "promo",
+      "title": "",
+      "link": ""
+    }
+  }
+}

@@ -4,11 +4,13 @@ export function CardDemo({
   title,
   excerpt,
   bgImg,
+  imageAlt,
   className,
 }: {
   title: string;
   excerpt?: string;
   bgImg?: string;
+  imageAlt?: string;
   className?: string;
 }) {
   return (
@@ -27,6 +29,7 @@ export function CardDemo({
       >
         <img
           src={bgImg}
+          alt={imageAlt}
           className="w-full h-full absolute object-cover object-left inset-0"
         />
         <div className="text relative z-50">

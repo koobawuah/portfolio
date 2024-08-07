@@ -8,6 +8,7 @@ interface ProjectItem {
   projectLink: string;
   themeColor: string;
   previewImage: string;
+  imageAlt: string;
   previewImageStyle: string;
 }
 
@@ -17,7 +18,7 @@ export default function ProjectPreview({
   projects: ProjectItem[];
 }) {
   return (
-    <div className="flex space-x-6 my-10 overflow-x-scroll pl-6 py-6">
+    <div className="flex space-x-6 my-10 overflow-x-scroll pl-6 pt-6 pb-12">
       {projects &&
         projects.map((p, idx) => (
           <Link
@@ -31,6 +32,7 @@ export default function ProjectPreview({
               title={p.title}
               excerpt={p.subtitle}
               bgImg={p.previewImage}
+              imageAlt={p.imageAlt}
             />
           </Link>
         ))}

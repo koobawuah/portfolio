@@ -7,6 +7,7 @@ import HeroHeading from "~/components/hero-heading";
 import Profile from "~/components/profile";
 import RevealAnimation from "~/components/reveal-animation";
 import SubHeading from "~/components/sub-heading";
+import * as _ from "~/site.json";
 import { PlaceholdersAndVanishInput } from "~/components/ui/placeholder-text-effect";
 import { TypewriterEffect } from "~/components/ui/typewriter-effect";
 import { useFetcher } from "@remix-run/react";
@@ -24,8 +25,7 @@ export const meta: MetaFunction = () => {
     { title: "Bawuahboakye | Freelancer. Designer. Developer." },
     {
       name: "description",
-      content:
-        "Welcome to the personal portfolio of bawuahboakye. A freelancer, designer and developer!",
+      content: _.description,
     },
     {
       name: "viewport",
@@ -49,30 +49,11 @@ export default function Index() {
     const form = new FormData(e.currentTarget);
 
     send.submit(form, { action: "/send", method: "post" });
-
-    // console.log("submitted");
   };
 
-  const words = [
-    { text: "Working " },
-    { text: "on " },
-    { text: "1 " },
-    { text: "web " },
-    { text: "app, " },
-    { text: "2 " },
-    { text: "websites, " },
-    { text: "1 " },
-    { text: "brand " },
-    { text: "identity " },
-    { text: "design, " },
-    { text: "building " },
-    { text: "2 " },
-    { text: "startups " },
-    { text: "& " },
-    { text: "setting " },
-    { text: "up " },
-    { text: "farmlands..." },
-  ];
+  const words = _.whatIAmDoing.split(" ").map((l, idx) => ({
+    text: l + " ",
+  }));
 
   const placeholders = [
     "What are your rates?",
@@ -133,7 +114,7 @@ export default function Index() {
           <UniqueParagraph boldText="I curated a few links for you to easily and quickly reach me for your ideas to become a reality!" />
         </div>
 
-        <div className="w-full flex flex-col sm:flex-row sm:max-w-5xl sm:mx-auto sm:items-center space-y-6 sm:space-y-0 sm:space-x-6 ">
+        <div className="w-full flex flex-col sm:flex-row sm:max-w-5xl sm:flex-wrap sm:mx-auto sm:items-center space-y-6 sm:space-y-0 sm:space-x-6 ">
           <CtaAction
             title="BOOK CLIENT CALL"
             ctaLink="https://cal.com/bawuahboakye/client-call"
@@ -206,11 +187,31 @@ export default function Index() {
 
 const projects = [
   {
+    title: "E-commerce Website",
+    subtitle: "Global Collections Books",
+    projectLink: "https://globalcollectionsbooks.com",
+    themeColor: "bg-[#ffff99]",
+    previewImage: "/images/globalcollectionsbooks.png",
+    imageAlt: "Bawuahboakye | Global Collections books project",
+    previewImageStyle: "",
+  },
+  {
     title: "Mobile App Development",
     subtitle: "Susubox Finance App",
-    projectLink: "https://behance.net/bawuahboakye",
+    projectLink:
+      "https://www.behance.net/gallery/205021437/Susubox-Finance-Mobile-App",
     themeColor: "bg-[#f3ca4d]",
     previewImage: "/images/susubox-shot.png",
+    imageAlt: "Bawuahboakye | Susubox personal mobile app project",
+    previewImageStyle: "",
+  },
+  {
+    title: "Web Development",
+    subtitle: "Kwamekoda Brand Website",
+    projectLink: "https://kwamekoda.com",
+    themeColor: "bg-[#14171f]",
+    previewImage: "/images/kwamekoda-site.png",
+    imageAlt: "Bawuahboakye | Kwamekoda Brand Website project",
     previewImageStyle: "",
   },
   {
@@ -220,30 +221,37 @@ const projects = [
     projectLink: "https://buildbafla.com",
     themeColor: "bg-[#14171f]",
     previewImage: "/images/buildbafla-site.png",
+    imageAlt: "Bawuahboakye | Bafla Construction website project",
     previewImageStyle: "",
   },
   {
     title: "Web Development",
     subtitle: "Mono Design Studio",
-    projectLink: "https://behance.net/bawuahboakye/",
+    projectLink:
+      "https://www.behance.net/gallery/205031181/MONO-DSGN-STDO-Website-Design",
     themeColor: "bg-[#ffff99]",
     previewImage: "/images/monodesignstudio.png",
+    imageAlt: "Bawuahboakye | Mono designstudio website project",
     previewImageStyle: "",
   },
   {
     title: "Graphics Design",
     subtitle: "TTETL NGO",
-    projectLink: "https://behance.net/bawuahboakye",
+    projectLink:
+      "https://www.behance.net/gallery/205025711/TTETL-Logo-Brand-Identity",
     themeColor: "bg-[#d0d4dc]",
     previewImage: "/images/ttetl-brochure-front.jpg",
+    imageAlt: "Bawuahboakye | TTETL Graphics Design project",
     previewImageStyle: "",
   },
   {
     title: "Product Photoshoot",
     subtitle: "Fruitwist Juice",
-    projectLink: "https://behance.net/bawuahboakye",
+    projectLink:
+      "https://www.behance.net/gallery/205024511/Fruitwist-Product-Photoshoot",
     themeColor: "bg-[#ff00ff]",
     previewImage: "/images/fruitwist-product-shoot.png",
+    imageAlt: "Bawuahboakye | Fruitwist product photoshoot project",
     previewImageStyle: "",
   },
   {
@@ -252,22 +260,7 @@ const projects = [
     projectLink: "https://behance.net/bawuahboakye",
     themeColor: "bg-[#f3ca4d]",
     previewImage: "/images/versace-magazine-showcase.jpg",
-    previewImageStyle: "",
-  },
-  {
-    title: "Web Development",
-    subtitle: "Kwamekoda Personal Website",
-    projectLink: "https://kwamekoda.com",
-    themeColor: "bg-[#14171f]",
-    previewImage: "/images/kwamekoda-site.png",
-    previewImageStyle: "",
-  },
-  {
-    title: "E-commerce Website",
-    subtitle: "Global Collections Books",
-    projectLink: "https://globalcollectionsbooks.com",
-    themeColor: "bg-[#ffff99]",
-    previewImage: "/images/globalcollectionsbooks.png",
+    imageAlt: "Bawuahboakye | Versace Graphics design service project",
     previewImageStyle: "",
   },
   {
@@ -276,6 +269,7 @@ const projects = [
     projectLink: "https://behance.net/bawuahboakye",
     themeColor: "bg-[#d0d4dc]",
     previewImage: "/images/versace-pos.jpg",
+    imageAlt: "Bawuahboakye | Versace POS Installation project",
     previewImageStyle: "",
   },
 ];
