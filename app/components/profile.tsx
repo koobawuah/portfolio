@@ -21,8 +21,11 @@ export default function Profile() {
     >
       <div className="mx-auto py-5">
         <img
-          className="w-[439px] object-cover grayscale contrast-125 rounded-2xl"
           src="/profile_picture.JPG"
+          width={400}
+          height={400}
+          alt="Bawuahboakye profile image"
+          className="w-[439px] object-cover grayscale contrast-125 rounded-2xl"
         />
       </div>
       <div className="flex flex-col space-y-6">
@@ -161,7 +164,7 @@ export default function Profile() {
                 className="flex items-center"
               >
                 <FaInstagram className="size-8 mr-2 text-zinc-500 hover:text-zinc-950 dark:text-zinc-500 dark:hover:text-zinc-200 transition" />{" "}
-                <p className="hidden">Instagram</p>
+                <p className="sr-only">Instagram</p>
               </Link>
             </li>
             <li className="list-none">
@@ -171,7 +174,7 @@ export default function Profile() {
                 className="flex items-center"
               >
                 <FaXTwitter className="size-8 mr-2 text-zinc-500 hover:text-zinc-950 dark:text-zinc-500 dark:hover:text-zinc-200 transition" />{" "}
-                <p className="hidden">X(Twitter)</p>
+                <p className="sr-only">X(Twitter)</p>
               </Link>
             </li>
             <li className="list-none">
@@ -181,7 +184,7 @@ export default function Profile() {
                 className="flex items-center"
               >
                 <FaGithub className="size-8 mr-2 text-zinc-500 hover:text-zinc-950 dark:text-zinc-500 dark:hover:text-zinc-200 transition" />{" "}
-                <p className="hidden">Github</p>
+                <p className="sr-only">Github</p>
               </Link>
             </li>
             <li className="list-none">
@@ -191,7 +194,7 @@ export default function Profile() {
                 className="flex items-center"
               >
                 <FaLinkedin className="size-8 mr-2 text-zinc-500 hover:text-zinc-950 dark:text-zinc-500 dark:hover:text-zinc-200 transition" />{" "}
-                <p className="hidden">LinkedIn</p>
+                <p className="sr-only">LinkedIn</p>
               </Link>
             </li>
             <li className="list-none">
@@ -201,7 +204,7 @@ export default function Profile() {
                 className="flex items-center"
               >
                 <FaBehance className="size-8 mr-2 text-zinc-500 hover:text-zinc-950 dark:text-zinc-500 dark:hover:text-zinc-200 transition" />{" "}
-                <p className="hidden">Behance</p>
+                <p className="sr-only">Behance</p>
               </Link>
             </li>
           </ul>

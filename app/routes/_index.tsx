@@ -1,3 +1,4 @@
+import * as site from "~/site.json";
 import type { MetaFunction } from "@remix-run/node";
 import { useState } from "react";
 import { CtaAction } from "~/components/CtaAction";
@@ -7,7 +8,6 @@ import HeroHeading from "~/components/hero-heading";
 import Profile from "~/components/profile";
 import RevealAnimation from "~/components/reveal-animation";
 import SubHeading from "~/components/sub-heading";
-import * as site from "~/site.json";
 import { PlaceholdersAndVanishInput } from "~/components/ui/placeholder-text-effect";
 import { TypewriterEffect } from "~/components/ui/typewriter-effect";
 import { useFetcher } from "@remix-run/react";
@@ -15,21 +15,16 @@ import { cn } from "~/lib/utils";
 import { UniqueParagraph } from "~/components/unique-paragraph";
 import ProjectPreview from "~/components/project-preview";
 import { RiServiceLine } from "react-icons/ri";
-import { MdWorkOutline } from "react-icons/md";
+import { MdWorkOutline, MdArrowOutward } from "react-icons/md";
 import { TbMailShare } from "react-icons/tb";
-import { HiArrowUpRight } from "react-icons/hi2";
 import posthog from "posthog-js";
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "Bawuahboakye | Freelancer. Designer. Developer." },
+    { title: `${site.title} | Freelancer. Designer. Developer.` },
     {
       name: "description",
       content: site.description,
-    },
-    {
-      name: "viewport",
-      content: "width=device-width, initial-scale=1, maximum-scale=1",
     },
   ];
 };
@@ -57,35 +52,33 @@ export default function Index() {
   const placeholders = [
     "What are your rates?",
     "How to start and run an e-commerce business?",
-    "Do you have books or resources?",
     "Why are you a freelancer?",
+    "Do you have books or resources to help others?",
     "Where do you see yourself and your business in 5 years?",
-    "How to assemble your own PC?",
+    "How long do you take to deliver a service?",
     "Do you teach your skills?",
     "Is there a place we can see your archived projects?",
-    "Can you work on my ideas?",
+    "Can you work on startup ideas for me?",
   ];
-
-  console.log(new Intl.DateTimeFormat().format());
 
   return (
     <div className="h-full relative">
       <CtaAction
         title={
           site.websiteCtaButton.index.title &&
-          new Date(site.websiteCtaButton.index.startDate).toISOString() >=
-            new Date().toISOString() &&
-          new Date(site.websiteCtaButton.index.endDate).toISOString() >=
-            new Date().toISOString()
+          new Date().toISOString() >
+            new Date(site.websiteCtaButton.index.startDate).toISOString() &&
+          new Date().toISOString() <=
+            new Date(site.websiteCtaButton.index.endDate).toISOString()
             ? site.websiteCtaButton.index.title
             : "FREE 15 MINS CALL"
         }
         ctaLink={
           site.websiteCtaButton.index.link &&
-          new Date(site.websiteCtaButton.index.startDate).toISOString() >=
-            new Date().toISOString() &&
-          new Date(site.websiteCtaButton.index.endDate).toISOString() <=
-            new Date().toISOString()
+          new Date().toISOString() >
+            new Date(site.websiteCtaButton.index.startDate).toISOString() &&
+          new Date().toISOString() <=
+            new Date(site.websiteCtaButton.index.endDate).toISOString()
             ? site.websiteCtaButton.index.link
             : "https://cal.com/bawuahboakye/free-15-mins"
         }
@@ -106,8 +99,6 @@ export default function Index() {
         <HeroHeading title="In the mean time, learn more about me..." />
 
         <Profile />
-
-        {/* <MultiPartProfile /> */}
       </section>
 
       <section className="w-full max-h-max p-6 my-12">
@@ -145,7 +136,7 @@ export default function Index() {
             title="LET'S TALK"
             ctaLink="https://cal.com/bawuahboakye"
             icon={
-              <HiArrowUpRight className="ml-2 size-4 fill-zinc-800 dark:fill-zinc-200" />
+              <MdArrowOutward className="ml-2 size-4 fill-zinc-800 dark:fill-zinc-200" />
             }
           />
           <CtaAction
@@ -166,7 +157,7 @@ export default function Index() {
             title="PROJECT DISCOVERY"
             ctaLink="https://cal.com/bawuahboakye/service-request"
             icon={
-              <HiArrowUpRight className="ml-2 size-4 fill-zinc-800 dark:fill-zinc-200" />
+              <MdArrowOutward className="ml-2 size-4 fill-zinc-800 dark:fill-zinc-200" />
             }
           />
         </div>
