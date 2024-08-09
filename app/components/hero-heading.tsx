@@ -16,9 +16,9 @@ const HeroHeading = ({
     }}
     className="pb-10 flex flex-row justify-center"
   >
-    <h1 className="max-w-5xl text-4xl md:text-9xl font-bold text-pretty text-zinc-950 dark:text-zinc-200">
+    <h2 className="max-w-5xl text-4xl md:text-9xl font-bold text-pretty text-zinc-950 dark:text-zinc-200">
       {title}
-    </h1>
+    </h2>
     <h3>{subtitle}</h3>
   </motion.div>
 );

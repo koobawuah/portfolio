@@ -21,7 +21,7 @@ const config = {
     },
     extend: {
       fontFamily: {
-        inter: ["Inter", "sans-serif"],
+        // inter: ["Inter", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",

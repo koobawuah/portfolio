@@ -33,9 +33,9 @@ export function CardDemo({
           className="w-full h-full absolute object-cover object-left inset-0"
         />
         <div className="text relative z-50">
-          <h1 className="font-bold text-xl md:text-3xl text-gray-50 relative drop-shadow-2xl">
+          <h3 className="font-bold text-xl md:text-3xl text-gray-50 relative drop-shadow-2xl">
             {title}
-          </h1>
+          </h3>
           <p className="font-normal text-base text-gray-50 relative my-4 drop-shadow-xl">
             {excerpt}
           </p>

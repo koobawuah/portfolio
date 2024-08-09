@@ -21,7 +21,7 @@ export default function Profile() {
     >
       <div className="mx-auto py-5">
         <img
-          src="/profile_picture.JPG"
+          src="/static/profile_picture.webp"
           width={400}
           height={400}
           alt="Bawuahboakye profile image"
@@ -30,7 +30,7 @@ export default function Profile() {
       </div>
       <div className="flex flex-col space-y-6">
         <div className="max-w-xl ">
-          <span className="font-extralight text-lg dark:text-zinc-200">
+          <span className="font-normal text-lg dark:text-zinc-200">
             A self-taught designer and software developer from Ghana, with over
             8 years in the design and software space.{" "}
             <em className="not-italic text-zinc-500 dark:text-zinc-400">
@@ -42,12 +42,12 @@ export default function Profile() {
               triggerExpandableCardText="Read more"
               title="Kofi Bawuah Boakye"
               description="Freelance I.T Contractor"
-              src="/profile_picture.JPG"
+              src="/static/profile_picture.webp"
               ctaLink="https://cal.com/bawuahboakye"
               ctaText="Let's chat now"
               content={() => (
                 <>
-                  <p className="text-lg mt-3 font-extralight text-zinc-950 dark:text-zinc-200 ">
+                  <p className="text-lg mt-3 font-normal text-zinc-950 dark:text-zinc-200 ">
                     Growing up in Accra, Ghana, life as I experienced, was
                     enjoyable and adventurous, filled with traveling and fun
                     times with my family. I always had a knack for drawing cool
@@ -98,17 +98,17 @@ export default function Profile() {
         </div>
 
         <div className="w-96">
-          <h2 className="w-auto font-semibold text-sm py-2.5 text-zinc-500">
+          <h3 className="w-auto font-semibold text-sm py-2.5 text-zinc-500">
             Experience:
-          </h2>
-          <p className="font-extralight text-base dark:text-zinc-200">
+          </h3>
+          <p className="font-normal text-base dark:text-zinc-200">
             Currently working as an I.T Professional Freelancer(self-employed){" "}
             <em className="not-italic text-sm font-medium font-mono">
               [ 2015 - Present ]
             </em>
           </p>
           <br />
-          <span className="font-extralight text-base dark:text-zinc-200 space-y-4">
+          <span className="font-normal text-base dark:text-zinc-200 space-y-4">
             Previously worked at Polymorph Labs,{" "}
             <LinkPreview
               url="https://ug.edu.gh"
@@ -136,11 +136,11 @@ export default function Profile() {
         </div>
 
         <div className="">
-          <h2 className="w-auto font-semibold text-sm py-2.5 text-zinc-500">
+          <h3 className="w-auto font-semibold text-sm py-2.5 text-zinc-500">
             Services:
-          </h2>
+          </h3>
           <div className="px-4">
-            <ul className="list-disc font-extralight text-base ">
+            <ul className="list-disc font-normal text-base ">
               <li>Website Design & Development</li>
               <li>Software & Application Development</li>
               <li>Mobile Application Development</li>
@@ -152,9 +152,9 @@ export default function Profile() {
           </div>
         </div>
         <div className="max-w-max">
-          <h2 className="w-auto font-semibold text-sm py-2.5 text-zinc-500">
+          <h3 className="w-auto font-semibold text-sm py-2.5 text-zinc-500">
             Socials:
-          </h2>
+          </h3>
           <ul className="w-full flex flex-row flex-wrap overflow-hidden space-x-4 justify-evenly items-center">
             <li className="list-none max-w-min">
               {/* <SocialLink icon link label/> */}

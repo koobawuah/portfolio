@@ -30,7 +30,7 @@ export const links: LinksFunction = () => [
     sizes: "16x16",
     href: "/favicons/favicon-16x16.png",
   },
-  { rel: "icon", href: "/favicon.ico" },
+  { rel: "icon", href: "/static/favicon.ico" },
 ];
 
 export function Layout({ children }: { children: React.ReactNode }) {

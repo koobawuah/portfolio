@@ -6,7 +6,7 @@ export function UniqueParagraph({
   boldText?: string;
 }) {
   return (
-    <p className="font-extralight text-lg dark:text-zinc-200">
+    <p className="font-normal text-lg dark:text-zinc-200">
       {boldText}{" "}
       <em className="not-italic text-zinc-500 dark:text-zinc-400">
         {regularText}

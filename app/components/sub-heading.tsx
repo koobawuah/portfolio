@@ -7,14 +7,14 @@ const SubHeading = ({
   title: string;
   className?: string;
 }) => (
-  <h3
+  <h2
     className={cn(
       "w-auto font-semibold text-md py-2 text-zinc-500 self-start",
       className
     )}
   >
     {title}
-  </h3>
+  </h2>
 );
 
 export default SubHeading;
