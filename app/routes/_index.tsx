@@ -196,15 +196,15 @@ export default function Index() {
 }
 
 const projects = [
-  {
-    title: "E-commerce Website",
-    subtitle: "Global Collections Books",
-    projectLink: "https://globalcollectionsbooks.com",
-    themeColor: "bg-[#ffff99]",
-    previewImage: "/images/globalcollectionsbooks.webp",
-    imageAlt: "Bawuahboakye | Global Collections books project",
-    previewImageStyle: "",
-  },
+  // {
+  //   title: "E-commerce Website",
+  //   subtitle: "Global Collections Books",
+  //   projectLink: "https://globalcollectionsbooks.com",
+  //   themeColor: "bg-[#ffff99]",
+  //   previewImage: "/images/globalcollectionsbooks.webp",
+  //   imageAlt: "Bawuahboakye | Global Collections books project",
+  //   previewImageStyle: "",
+  // },
   {
     title: "Mobile App Development",
     subtitle: "Susubox Finance App",

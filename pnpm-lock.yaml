@@ -32,9 +32,15 @@ importers:
       clsx:
         specifier: ^2.1.0
         version: 2.1.0
+      embla-carousel:
+        specifier: ^8.3.1
+        version: 8.3.1
+      embla-carousel-auto-scroll:
+        specifier: ^8.3.1
+        version: 8.3.1(embla-carousel@8.3.1)
       embla-carousel-autoplay:
         specifier: ^8.0.2
-        version: 8.0.2(embla-carousel@8.0.2)
+        version: 8.0.2(embla-carousel@8.3.1)
       embla-carousel-react:
         specifier: ^8.0.2
         version: 8.0.2(react@18.2.0)
@@ -1620,6 +1626,11 @@ packages:
   electron-to-chromium@1.4.736:
     resolution: {integrity: sha512-Rer6wc3ynLelKNM4lOCg7/zPQj8tPOCB2hzD32PX9wd3hgRRi9MxEbmkFCokzcEhRVMiOVLjnL9ig9cefJ+6+Q==}
 
+  embla-carousel-auto-scroll@8.3.1:
+    resolution: {integrity: sha512-jrLEZLceCdQqTGCf9S4W1/AX4S8BwDmiW3eDKdpFEbhrQ187t7MVRDr9M17ljI7V4DMorExgZzEHnokjGS+0SQ==}
+    peerDependencies:
+      embla-carousel: 8.3.1
+
   embla-carousel-autoplay@8.0.2:
     resolution: {integrity: sha512-31lBigAkHeI4k1767uYcr9Gm2y12mzLpVsi+QRxIWQT8J4AtRoHLOhd8YJFiXf22DbI/j78+IaeJK4lZRlFxUw==}
     peerDependencies:
@@ -1637,6 +1648,9 @@ packages:
 
   embla-carousel@8.0.2:
     resolution: {integrity: sha512-bogsDO8xosuh/l3PxIvA5AMl3+BnRVAse9sDW/60amzj4MbGS5re4WH5eVEXiuH8G1/3G7QUAX2QNr3Yx8z5rA==}
+
+  embla-carousel@8.3.1:
+    resolution: {integrity: sha512-DutFjtEO586XptDn4cwvBJwsR/8fMa4jUk5Jk2g+/elKgu8mdn0Z2sx33g4JskvbLc1/6P8Xg4QlfELGJFcP5A==}
 
   emoji-regex@8.0.0:
     resolution: {integrity: sha512-MSjYzcWNOA0ewAHpz0MxpYFvwg6yjy1NG3xteoqz644VCo/RPgnr1/GGt+ic3iJTzQ8Eu3TdM14SawnVUmGE6A==}
@@ -5275,9 +5289,13 @@ snapshots:
 
   electron-to-chromium@1.4.736: {}
 
-  embla-carousel-autoplay@8.0.2(embla-carousel@8.0.2):
+  embla-carousel-auto-scroll@8.3.1(embla-carousel@8.3.1):
     dependencies:
-      embla-carousel: 8.0.2
+      embla-carousel: 8.3.1
+
+  embla-carousel-autoplay@8.0.2(embla-carousel@8.3.1):
+    dependencies:
+      embla-carousel: 8.3.1
 
   embla-carousel-react@8.0.2(react@18.2.0):
     dependencies:
@@ -5290,6 +5308,8 @@ snapshots:
       embla-carousel: 8.0.2
 
   embla-carousel@8.0.2: {}
+
+  embla-carousel@8.3.1: {}
 
   emoji-regex@8.0.0: {}
 
