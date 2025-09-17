@@ -46,7 +46,7 @@ export default function Index() {
   };
 
   const words = site.whatIAmDoing.split(" ").map((l, idx) => ({
-    text: l + " ",
+    text: `${l} `,
   }));
 
   const placeholders = [
@@ -105,8 +105,7 @@ export default function Index() {
         <div className="max-w-5xl mx-auto">
           <SubHeading title="Client Work & Personal Projects:" />
           <UniqueParagraph
-            boldText="You will find below, some works I am proud of and personal projects
-            I show off."
+            boldText="A showcase of select client projects, designs and solutions I've built over the past 8 years."
             regularText="Patience, time and consistency have made me a jack of many trades,
               but master of none... but the rest of that phrase is ...though
               often times better than master of one."
@@ -196,15 +195,16 @@ export default function Index() {
 }
 
 const projects = [
-  // {
-  //   title: "E-commerce Website",
-  //   subtitle: "Global Collections Books",
-  //   projectLink: "https://globalcollectionsbooks.com",
-  //   themeColor: "bg-[#ffff99]",
-  //   previewImage: "/images/globalcollectionsbooks.webp",
-  //   imageAlt: "Bawuahboakye | Global Collections books project",
-  //   previewImageStyle: "",
-  // },
+  {
+    title: "E-commerce Landing Page",
+    subtitle: "Laso Technologies",
+    projectLink: "https://lasotechnologies.com",
+    themeColor: "bg-[#ffff99]",
+    previewImage: "/images/lasotech.png",
+    imageAlt:
+      "Bawuahboakye | LASO Technologies E-commerce Landing Page project",
+    previewImageStyle: "",
+  },
   {
     title: "Mobile App Development",
     subtitle: "Susubox Finance App",
@@ -217,11 +217,11 @@ const projects = [
   },
   {
     title: "Web Development",
-    subtitle: "Kwamekoda Brand Website",
-    projectLink: "https://kwamekoda.com",
+    subtitle: "Brick and Lime Group Website",
+    projectLink: "https://brickandlimegroup.com",
     themeColor: "bg-[#14171f]",
-    previewImage: "/images/kwamekoda-site.webp",
-    imageAlt: "Bawuahboakye | Kwamekoda Brand Website project",
+    previewImage: "/images/brickandlimegroup.png",
+    imageAlt: "Bawuahboakye | Brick and Lime Group Website project",
     previewImageStyle: "",
   },
   {

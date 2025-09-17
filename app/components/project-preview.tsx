@@ -37,24 +37,25 @@ export default function ProjectPreview({
       opts={{ loop: true, align: "start" }}
     >
       <CarouselContent className="mt-6 mb-12">
-        {projects &&
-          projects.map((p, idx) => (
-            <Link
-              className={cn(idx === projects.length - 1 ? "mr-0" : null)}
-              target="_blank"
-              key={p.title + idx}
-              to={p.projectLink}
-            >
-              <CarouselItem>
-                <CardDemo
-                  title={p.title}
-                  excerpt={p.subtitle}
-                  bgImg={p.previewImage}
-                  imageAlt={p.imageAlt}
-                />
-              </CarouselItem>
-            </Link>
-          ))}
+        {projects
+          ? projects.map((p, idx) => (
+              <Link
+                className={cn(idx === projects.length - 1 ? "mr-0" : null)}
+                target="_blank"
+                key={`${p.title}-${idx}`}
+                to={p.projectLink}
+              >
+                <CarouselItem>
+                  <CardDemo
+                    title={p.title}
+                    excerpt={p.subtitle}
+                    bgImg={p.previewImage}
+                    imageAlt={p.imageAlt}
+                  />
+                </CarouselItem>
+              </Link>
+            ))
+          : null}
       </CarouselContent>
     </Carousel>
     // </div>
