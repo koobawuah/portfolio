@@ -181,7 +181,7 @@ export default function Index() {
               "text-xs self-cener my-2",
               send.state === "idle" && send.data
                 ? "text-green-600 dark:text-green-400"
-                : "hidden"
+                : "hidden",
             )}
           >
             I have received your message successfully!
@@ -227,11 +227,11 @@ const projects = [
   {
     title: "Web Development",
     titleStyle: "text-zinc-200",
-    subtitle: "Buildbafla construction website",
-    projectLink: "https://buildbafla.com",
-    themeColor: "bg-[#14171f]",
-    previewImage: "/images/buildbafla-site.webp",
-    imageAlt: "Bawuahboakye | Bafla Construction website project",
+    subtitle: "The Dei Centre",
+    projectLink: "https://deicentre.com/",
+    themeColor: "bg-[#E2C9A5]",
+    previewImage: "/images/dei-centre-shot.png",
+    imageAlt: "Bawuahboakye | The Dei Centre website project",
     previewImageStyle: "",
   },
   {
