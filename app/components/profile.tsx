@@ -24,7 +24,7 @@ export default function Profile() {
           src="/static/profile_picture.webp"
           width={400}
           height={400}
-          alt="Bawuahboakye profile image"
+          alt="Bawuahboakye profile img"
           className="w-[439px] object-cover grayscale contrast-125 rounded-2xl"
         />
       </div>
@@ -127,10 +127,16 @@ export default function Profile() {
           </span>
           <br />
           <button
-            onClick={() => window.open("https://read.cv/koobawuah", "_blank")}
+            type="button"
+            onClick={() =>
+              window.open(
+                "http://test.bawuahboakye.com/resume/KBB_RES_26.pdf",
+                "_blank",
+              )
+            }
             className="mt-4 inline-flex h-12 animate-shimmer items-center justify-center rounded-full border border-zinc-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 font-semibold text-sm text-zinc-100 transition-colors focus:outline-none focus:ring-2 focus:ring-zinc-400 focus:ring-offset-2 focus:ring-offset-zinc-50"
           >
-            View My Resume{" "}
+            View My Resume
             <OpenInNewWindowIcon className="size-5 stroke-2 ml-3" />
           </button>
         </div>
