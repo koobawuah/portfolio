@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { LinksFunction } from "@remix-run/node";
+import type { LinksFunction } from "@remix-run/node";
 import stylesheet from "~/tailwind.css?url";
 import {
   Links,
@@ -10,6 +10,7 @@ import {
   useLocation,
 } from "@remix-run/react";
 import posthog from "posthog-js";
+import { ReactLenis } from "lenis/react";
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: stylesheet },
@@ -35,9 +36,19 @@ export const links: LinksFunction = () => [
 
 export function Layout({ children }: { children: React.ReactNode }) {
   const location = useLocation();
+  // const lenis = new Lenis({
+  //   duration: 4,
+  //   autoRaf: true,
+  //   autoToggle: true,
+  //   anchors: true,
+  //   allowNestedScroll: true,
+  //   naiveDimensions: true,
+  //   stopInertiaOnNavigate: true,
+  // });
+
   useEffect(() => {
     posthog.capture("$pageview");
-  }, [location]);
+  }, []);
 
   return (
     <html lang="en">
@@ -50,6 +61,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <body className="w-full bg-white text-zinc-800 dark:bg-black dark:text-zinc-300 font-inter relative">
         {children}
         <ScrollRestoration />
+        <ReactLenis root options={{ duration: 4 }} />
         <Scripts />
       </body>
     </html>
